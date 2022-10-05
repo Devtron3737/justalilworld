@@ -19,7 +19,7 @@ class App extends React.Component {
     return (
       <MapContainer
         style={{ height: "85vh", width: "90vh" }}
-        center={[0, 0]}
+        center={[20, 100]}
         zoom={1}
       >
         <div id="country-count"> {this.state.correctCountries.length}/195 </div>
