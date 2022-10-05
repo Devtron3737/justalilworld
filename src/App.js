@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { MapContainer } from "react-leaflet";
 
 import Countries from "./Countries";
 import "./App.css";
-import { Icon } from "leaflet";
-// import * as parkData from "./data/skateboard-parks.json";
 
 class App extends React.Component {
   state = {
@@ -12,7 +10,9 @@ class App extends React.Component {
   };
 
   addCorrectCountry = (country) => {
-    this.setState({ correctCountries: this.state.correctCountries.concat([country]) });
+    this.setState({
+      correctCountries: this.state.correctCountries.concat([country]),
+    });
   };
 
   render() {
@@ -23,7 +23,10 @@ class App extends React.Component {
         zoom={1}
       >
         <div id="country-count"> {this.state.correctCountries.length}/195 </div>
-        <Countries correctCountries={this.state.correctCountries} addCorrectCountry={this.addCorrectCountry} />
+        <Countries
+          correctCountries={this.state.correctCountries}
+          addCorrectCountry={this.addCorrectCountry}
+        />
       </MapContainer>
     );
   }
