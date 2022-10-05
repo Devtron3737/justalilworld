@@ -19,11 +19,14 @@ class App extends React.Component {
     return (
       <MapContainer
         style={{ height: "85vh", width: "90vh" }}
-        center={[20, 100]}
+        center={[0, 0]}
         zoom={1}
       >
         <div id="country-count"> {this.state.correctCountries.length}/195 </div>
-        <Countries correctCountries={this.state.correctCountries} addCorrectCountry={this.addCorrectCountry} />
+        <Countries
+          correctCountries={this.state.correctCountries}
+          addCorrectCountry={this.addCorrectCountry}
+        />
       </MapContainer>
     );
   }
