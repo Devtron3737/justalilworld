@@ -27,7 +27,7 @@ class App extends React.Component {
   render() {
     return (
       <MapContainer
-        style={{ height: "85vh", width: "90vh" }}
+        style={{ height: "85vh", width: "90vw" }}
         center={[0, 0]}
         zoom={1}
       >
