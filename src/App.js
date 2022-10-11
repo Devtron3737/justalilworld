@@ -9,10 +9,19 @@ import { Icon } from "leaflet";
 class App extends React.Component {
   state = {
     correctCountries: [],
+    incorrectCountries: [],
   };
 
   addCorrectCountry = (country) => {
-    this.setState({ correctCountries: this.state.correctCountries.concat([country]) });
+    this.setState({
+      correctCountries: this.state.correctCountries.concat([country]),
+    });
+  };
+
+  addIncorrectCountry = (country) => {
+    this.setState({
+      incorrectCountries: this.state.incorrectCountries.concat([country]),
+    });
   };
 
   render() {
@@ -26,6 +35,8 @@ class App extends React.Component {
         <Countries
           correctCountries={this.state.correctCountries}
           addCorrectCountry={this.addCorrectCountry}
+          incorrectCountries={this.state.incorrectCountries}
+          addIncorrectCountry={this.addIncorrectCountry}
         />
       </MapContainer>
     );
