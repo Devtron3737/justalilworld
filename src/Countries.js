@@ -27,45 +27,33 @@ class Countries extends React.Component {
 
       // if the country is already in the correct or incorrect list, just
       // close the popup
-      if (
-        this.props.correctCountries.includes(countryName) ||
-        this.props.incorrectCountries.includes(countryName)
-      ) {
+      if (this.props.correctCountries.includes(countryName)) {
         layer.closePopup();
         return;
       }
 
-      if (this.isCorrectCountry(e, countryName)) {
+      if (this.isCorrectFirstGuess(e, countryName)) {
+        // got it right on the first try
         // add the country to state and turn it green
         this.props.addCorrectCountry(countryName);
         layer.setStyle({ color: "green" });
+      } else if (this.isCorrectLaterGuess(e, countryName)) {
+        // they got it wrong at first, but got it right later
+        // add the country to "later guess" state and turn it orange
+        this.props.addLaterCorrectCountry(countryName);
+        layer.setStyle({ color: "orange" });
       } else {
+        // they got it wrong
         // add the country to state and turn it red
         this.props.addIncorrectCountry(countryName);
         layer.setStyle({ color: "red" });
       }
+
       layer.closePopup();
     });
 
     // add code here if you want to do something while the user is typing
-    input.addEventListener("input", (e) => {
-      // console.log("e.target!!");
-      // console.log(e.target.value);
-      // console.log("country.properties.COUNTRY.slice(0, 3)");
-      // console.log(country.properties.COUNTRY.slice(0, 3));
-      // const countryName = country.properties.COUNTRY;
-      // // if target value contains the first 3 letters of country name
-      // // then change the country border to green
-      // console.log("this.props.correctCountries!!");
-      // console.log(this.props.correctCountries);
-      // if (
-      //   this.isCorrectCountry(e, countryName) &&
-      //   !this.props.correctCountries.includes(countryName)
-      // ) {
-      //   layer.setStyle({ color: "green" });
-      //   this.props.addCorrectCountry(countryName);
-      // }
-    });
+    // input.addEventListener("input", (e) => {});
 
     layer.bindPopup(input);
 
@@ -73,7 +61,26 @@ class Countries extends React.Component {
     layer.on("popupopen", () => {
       input.focus();
     });
-  };
+  };;
+
+  isCorrectFirstGuess(e, countryName) {
+    // check if country is already in the correct list
+    if (!this.props.incorrectCountries.includes(countryName)) {
+      return this.isCorrectCountry(e, countryName);
+    }
+
+    // isnt their first guess
+    return false;
+  }
+
+  isCorrectLaterGuess(e, countryName) {
+    // check if country is already in the correct list
+    if (this.props.incorrectCountries.includes(countryName)) {
+      return this.isCorrectCountry(e, countryName);
+    }
+
+    return false;
+  }
 
   isCorrectCountry(e, countryName) {
     return e.target.value

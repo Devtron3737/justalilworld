@@ -10,6 +10,7 @@ class App extends React.Component {
   state = {
     correctCountries: [],
     incorrectCountries: [],
+    laterCorrectCountries: [],
   };
 
   addCorrectCountry = (country) => {
@@ -21,6 +22,12 @@ class App extends React.Component {
   addIncorrectCountry = (country) => {
     this.setState({
       incorrectCountries: this.state.incorrectCountries.concat([country]),
+    });
+  };
+
+  addLaterCorrectCountry = (country) => {
+    this.setState({
+      laterCorrectCountries: this.state.laterCorrectCountries.concat([country]),
     });
   };
 
@@ -37,6 +44,7 @@ class App extends React.Component {
           addCorrectCountry={this.addCorrectCountry}
           incorrectCountries={this.state.incorrectCountries}
           addIncorrectCountry={this.addIncorrectCountry}
+          addLaterCorrectCountry={this.addLaterCorrectCountry}
         />
       </MapContainer>
     );
