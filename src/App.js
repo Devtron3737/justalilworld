@@ -11,6 +11,7 @@ class App extends React.Component {
     correctCountries: [],
     incorrectCountries: [],
     laterCorrectCountries: [],
+    revealedCountries: [],
   };
 
   addCorrectCountry = (country) => {
@@ -31,6 +32,12 @@ class App extends React.Component {
     });
   };
 
+  addRevealedCountry = (country) => {
+    this.setState({
+      revealedCountries: this.state.revealedCountries.concat([country]),
+    });
+  };
+
   render() {
     return (
       <MapContainer
@@ -44,6 +51,8 @@ class App extends React.Component {
           addCorrectCountry={this.addCorrectCountry}
           incorrectCountries={this.state.incorrectCountries}
           addIncorrectCountry={this.addIncorrectCountry}
+          revealedCountries={this.state.revealedCountries}
+          addRevealedCountry={this.addRevealedCountry}
           addLaterCorrectCountry={this.addLaterCorrectCountry}
         />
       </MapContainer>
