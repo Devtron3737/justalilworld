@@ -3,7 +3,7 @@
   "name": "it's just a lil world",
   "display": "standalone",
   "orientation": "portrait-primary",
-  "start_url": "./public/index.html",
+  "start_url": "./build/index.html",
   "theme_color": "#F5F5DC",
   "background_color": "#F5F5DC",
   "icons": [
