@@ -14,6 +14,15 @@ class App extends React.Component {
     revealedCountries: [],
   };
 
+  clearAll = () => {
+    this.setState({
+      correctCountries: [],
+      incorrectCountries: [],
+      laterCorrectCountries: [],
+      revealedCountries: [],
+    });
+  };
+
   addCorrectCountry = (country) => {
     this.setState({
       correctCountries: this.state.correctCountries.concat([country]),
@@ -46,6 +55,9 @@ class App extends React.Component {
         zoom={1}
       >
         <div id="country-count"> {this.state.correctCountries.length}/195 </div>
+        <div id="clear-button" onClick={this.clearAll}>
+          clear
+        </div>
         <Countries
           correctCountries={this.state.correctCountries}
           addCorrectCountry={this.addCorrectCountry}
