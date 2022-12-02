@@ -4,7 +4,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-// add this back when you want to use the service worker
+window.deferredPwaInstallPrompt = null;
+
+window.addEventListener("beforeinstallprompt", (e) => {
+  window.deferredPwaInstallPrompt = e;
+});
 
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", function () {

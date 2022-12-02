@@ -20,6 +20,7 @@ const urlsToCache = [
 // });
 
 // handle the install event
+// eslint-disable-next-line
 self.addEventListener("install", (installEvent) => {
   installEvent.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
@@ -30,6 +31,7 @@ self.addEventListener("install", (installEvent) => {
 });
 
 // add fetch event listener
+// eslint-disable-next-line
 self.addEventListener("fetch", function (event) {
   event.respondWith(
     caches.match(event.request).then(function (response) {
