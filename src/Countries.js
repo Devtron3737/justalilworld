@@ -5,6 +5,14 @@ import data from "./country_data.json";
 
 class Countries extends React.Component {
   onEachCountry = (country, layer) => {
+    // set all the layers to blue if the state is empty
+    // this happens when we clear the map
+    if (this.props.correctCountries.length === 0) {
+      layer.setStyle({
+        color: "#2aa1ff",
+      });
+    }
+
     const wrapperDiv = document.createElement("div");
     wrapperDiv.classList.add("popup-wrapper");
 
@@ -126,7 +134,13 @@ class Countries extends React.Component {
   }
 
   render() {
-    return <GeoJSON data={data.features} onEachFeature={this.onEachCountry} />;
+    return (
+      <GeoJSON
+        key={this.props.mapKey} // this is needed to force a re-render
+        data={data.features}
+        onEachFeature={this.onEachCountry}
+      />
+    );
   }
 }
 

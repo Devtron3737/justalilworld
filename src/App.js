@@ -8,6 +8,7 @@ import { Icon } from "leaflet";
 
 class App extends React.Component {
   state = {
+    mapKey: Math.random(),
     correctCountries: [],
     incorrectCountries: [],
     laterCorrectCountries: [],
@@ -16,6 +17,7 @@ class App extends React.Component {
 
   clearAll = () => {
     this.setState({
+      mapKey: Math.random(),
       correctCountries: [],
       incorrectCountries: [],
       laterCorrectCountries: [],
@@ -59,6 +61,7 @@ class App extends React.Component {
           clear
         </div>
         <Countries
+          mapKey={this.state.mapKey}
           correctCountries={this.state.correctCountries}
           addCorrectCountry={this.addCorrectCountry}
           incorrectCountries={this.state.incorrectCountries}

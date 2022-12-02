@@ -8,17 +8,6 @@ const urlsToCache = [
   "/src/country_data.json",
 ];
 
-// self.addEventListener(‘install’, function(event) {
-// // Perform install steps
-// event.waitUntil(
-// caches.open(CACHE_NAME)
-// .then(function(cache) {
-// console.log(‘Opened cache’);
-// return cache.addAll(urlsToCache);
-// })
-// );
-// });
-
 // handle the install event
 self.addEventListener("install", (installEvent) => {
   installEvent.waitUntil(
