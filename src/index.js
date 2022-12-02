@@ -6,14 +6,14 @@ import reportWebVitals from './reportWebVitals';
 
 // add this back when you want to use the service worker
 
-// if ("serviceWorker" in navigator) {
-//   window.addEventListener("load", function () {
-//     navigator.serviceWorker
-//       .register("/ServiceWorker.js")
-//       .then((res) => console.log("service worker registered"))
-//       .catch((err) => console.log("service worker not registered", err));
-//   });
-// }
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function () {
+    navigator.serviceWorker
+      .register("/service-worker.js")
+      .then((res) => console.log("service worker registered"))
+      .catch((err) => console.log("service worker not registered", err));
+  });
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
