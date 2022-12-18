@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { MapContainer } from "react-leaflet";
 
 import Countries from "./Countries";
