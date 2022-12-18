@@ -58,7 +58,7 @@ class App extends React.Component {
       >
         <div id="country-count"> {this.state.correctCountries.length}/195 </div>
         <div id="clear-button" onClick={this.clearAll}>
-          clear
+          clear all
         </div>
         <Countries
           mapKey={this.state.mapKey}

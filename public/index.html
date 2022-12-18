@@ -26,10 +26,28 @@
           align-items: center;
         }
 
-        #site-title {
-          font-size: 2rem;
-          font-weight: bold;
+        #site-header-container {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          width: 90vw;
+          padding-right: 15px;
+          padding-left: 15px;
           margin: 1rem;
+        }
+
+        #site-title-container {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: flex-start;
+        }
+
+        #site-title {
+          font-size: 1.2rem;
+          font-weight: bold;
+          margin-left: 10px;
         }
 
         #root {
@@ -113,7 +131,23 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="container-of-all">
-      <div id="site-title"> It's just a lil world. </div>
+      <div id="site-header-container">
+        <div id="site-title-container">
+          <img
+            src="taly_face.png"
+            alt="Taly"
+            width="20"
+            height="20"
+          >
+          <div id="site-title"> It's just a lil world. </div>
+        </div>
+        <img
+          src="icon_gear.png"
+          alt="Settings"
+          width="20"
+          height="20"
+        >
+      </div>
       <div id="root"></div>
     </div>
     <!--
