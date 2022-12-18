@@ -2,9 +2,8 @@ import React from "react";
 import { MapContainer } from "react-leaflet";
 
 import Countries from "./Countries";
+import SettingsModal from "./SettingsModal";
 import "./App.css";
-import { Icon } from "leaflet";
-// import * as parkData from "./data/skateboard-parks.json";
 
 class App extends React.Component {
   state = {
@@ -13,6 +12,9 @@ class App extends React.Component {
     incorrectCountries: [],
     laterCorrectCountries: [],
     revealedCountries: [],
+    showSettingsModal: false,
+    showCountryName: true,
+    showCountryGdp: false,
   };
 
   clearAll = () => {
@@ -22,6 +24,24 @@ class App extends React.Component {
       incorrectCountries: [],
       laterCorrectCountries: [],
       revealedCountries: [],
+    });
+  };
+
+  toggleSettingsModal = () => {
+    this.setState({
+      showSettingsModal: !this.state.showSettingsModal,
+    });
+  };
+
+  toggleCountryName = () => {
+    this.setState({
+      showCountryName: !this.state.showCountryName,
+    });
+  };
+
+  toggleCountryGdp = () => {
+    this.setState({
+      showCountryGdp: !this.state.showCountryGdp,
     });
   };
 
@@ -57,9 +77,24 @@ class App extends React.Component {
             <img src="taly_face.png" alt="Taly" width="20" height="20" />
             <div id="site-title"> It's just a lil world. </div>
           </div>
-          <img src="icon_gear.png" alt="Settings" width="20" height="20" />
+          <img
+            src="icon_gear.png"
+            alt="Settings"
+            width="20"
+            height="20"
+            onClick={this.toggleSettingsModal}
+          />
         </div>
         <div id="root">
+          {this.state.showSettingsModal ? (
+            <SettingsModal
+              showCountryName={this.state.showCountryName}
+              showCountryGdp={this.state.showCountryGdp}
+              toggleSettingsModal={this.toggleSettingsModal}
+              toggleCountryName={this.toggleCountryName}
+              toggleCountryGdp={this.toggleCountryGdp}
+            />
+          ) : null}
           <MapContainer
             style={{ height: "85vh", width: "90vw" }}
             center={[0, 0]}
