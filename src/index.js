@@ -19,7 +19,7 @@ if ("serviceWorker" in navigator) {
   });
 }
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("container-of-all"));
 root.render(
   <React.StrictMode>
     <App />

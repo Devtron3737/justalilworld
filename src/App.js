@@ -51,26 +51,40 @@ class App extends React.Component {
 
   render() {
     return (
-      <MapContainer
-        style={{ height: "85vh", width: "90vw" }}
-        center={[0, 0]}
-        zoom={1}
-      >
-        <div id="country-count"> {this.state.correctCountries.length}/195 </div>
-        <div id="clear-button" onClick={this.clearAll}>
-          clear all
+      <>
+        <div id="site-header-container">
+          <div id="site-title-container">
+            <img src="taly_face.png" alt="Taly" width="20" height="20" />
+            <div id="site-title"> It's just a lil world. </div>
+          </div>
+          <img src="icon_gear.png" alt="Settings" width="20" height="20" />
         </div>
-        <Countries
-          mapKey={this.state.mapKey}
-          correctCountries={this.state.correctCountries}
-          addCorrectCountry={this.addCorrectCountry}
-          incorrectCountries={this.state.incorrectCountries}
-          addIncorrectCountry={this.addIncorrectCountry}
-          revealedCountries={this.state.revealedCountries}
-          addRevealedCountry={this.addRevealedCountry}
-          addLaterCorrectCountry={this.addLaterCorrectCountry}
-        />
-      </MapContainer>
+        <div id="root">
+          <MapContainer
+            style={{ height: "85vh", width: "90vw" }}
+            center={[0, 0]}
+            zoom={1}
+          >
+            <div id="country-count">
+              {" "}
+              {this.state.correctCountries.length}/195{" "}
+            </div>
+            <div id="clear-button" onClick={this.clearAll}>
+              clear all
+            </div>
+            <Countries
+              mapKey={this.state.mapKey}
+              correctCountries={this.state.correctCountries}
+              addCorrectCountry={this.addCorrectCountry}
+              incorrectCountries={this.state.incorrectCountries}
+              addIncorrectCountry={this.addIncorrectCountry}
+              revealedCountries={this.state.revealedCountries}
+              addRevealedCountry={this.addRevealedCountry}
+              addLaterCorrectCountry={this.addLaterCorrectCountry}
+            />
+          </MapContainer>
+        </div>
+      </>
     );
   }
 }
