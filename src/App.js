@@ -15,6 +15,7 @@ class App extends React.Component {
     showSettingsModal: false,
     showCountryName: true,
     showCountryGdp: false,
+    darkMode: true,
   };
 
   clearAll = () => {
@@ -24,6 +25,31 @@ class App extends React.Component {
       incorrectCountries: [],
       laterCorrectCountries: [],
       revealedCountries: [],
+    });
+  };
+
+  toggleDarkMode = () => {
+    this.setState((prevState) => {
+      const darkMode = !prevState.darkMode;
+      document.body.style.backgroundColor = darkMode ? "black" : "white";
+      document.body.style.color = darkMode ? "white" : "black";
+
+      document.documentElement.style.setProperty(
+        "--leaflet-popup-bg-color",
+        darkMode ? "rgba(0, 0, 0, 0.85)" : "rgba(255, 255, 255, 0.92)"
+      );
+
+      document.documentElement.style.setProperty(
+        "--leaflet-popup-border",
+        darkMode ? "white" : "black"
+      );
+
+      document.documentElement.style.setProperty(
+        "--font-color",
+        darkMode ? "white" : "black"
+      );
+
+      return { darkMode };
     });
   };
 
@@ -70,41 +96,47 @@ class App extends React.Component {
   };
 
   render() {
+    const darkMode = this.state.darkMode;
+
     return (
       <>
         <div id="site-header-container">
           <div id="site-title-container">
-            <img src="taly_face.png" alt="Taly" width="20" height="20" />
+            <img
+              src={darkMode ? "dev_face.jpg" : "taly_face.png"}
+              alt="Taly"
+              width="20"
+              height="20"
+            />
             <div id="site-title"> It's just a lil world. </div>
           </div>
-          {/* <img
-            src="icon_gear.png"
-            alt="Settings"
-            width="20"
-            height="20"
-            onClick={this.toggleSettingsModal}
-          /> */}
+          <img
+            src={darkMode ? "toggle_dark.png" : "toggle_light.png"}
+            alt="Light Mode Toggle"
+            width="50"
+            height="40"
+            onClick={this.toggleDarkMode}
+          />
         </div>
         <div id="root">
-          {/* {this.state.showSettingsModal ? (
-            <SettingsModal
-              showCountryName={this.state.showCountryName}
-              showCountryGdp={this.state.showCountryGdp}
-              toggleSettingsModal={this.toggleSettingsModal}
-              toggleCountryName={this.toggleCountryName}
-              toggleCountryGdp={this.toggleCountryGdp}
-            />
-          ) : null} */}
           <MapContainer
-            style={{ height: "85vh", width: "90vw" }}
+            key={darkMode ? "dark" : "light"} // force a re-render when dark mode is toggled
             center={[0, 0]}
             zoom={1}
+            style={{
+              height: "85vh",
+              width: "90vw",
+              backgroundColor: darkMode ? "black" : "white",
+            }}
           >
-            <div id="country-count">
+            <div className={darkMode ? "country-count" : "country-count light"}>
               {" "}
               {this.state.correctCountries.length}/195{" "}
             </div>
-            <div id="clear-button" onClick={this.clearAll}>
+            <div
+              className={darkMode ? "clear-button" : "clear-button light"}
+              onClick={this.clearAll}
+            >
               clear all
             </div>
             <Countries
@@ -112,6 +144,7 @@ class App extends React.Component {
               correctCountries={this.state.correctCountries}
               addCorrectCountry={this.addCorrectCountry}
               incorrectCountries={this.state.incorrectCountries}
+              darkMode={darkMode}
               addIncorrectCountry={this.addIncorrectCountry}
               revealedCountries={this.state.revealedCountries}
               addRevealedCountry={this.addRevealedCountry}

@@ -18,13 +18,14 @@
      <style>
         :root {
             --translucent: rgba(0, 0, 0, 0);
-            --translucent-black: rgba(0, 0, 0, 0.85); /* Black with 70% opacity */
+            --leaflet-popup-bg-color: rgba(0, 0, 0, 0.85); /* Black with 70% opacity */
+            --leaflet-popup-border: 3px solid white;
+            --font-color: white;
         }
 
         body {
-          /* background-color: beige; */
-          background-color: #000000;
-          color: beige;
+          background-color: black;
+          color: white;
         }
 
         #container-of-all {
@@ -83,13 +84,7 @@
           box-shadow: 0 30px 40px rgba(0,0,0,.1);
         }
 
-        .leaflet-container {
-          /* set background color to a light blue */
-          /* background-color: #e0f3f8; */
-          background-color: #000000;
-        }
-
-        #country-count {
+        .country-count {
           position: absolute;
           top: 80px;
           left: 10px;
@@ -97,7 +92,11 @@
           font-weight: bold;
         }
 
-        #clear-button {
+        .country-count.light {
+          color: black;
+        }
+
+        .clear-button {
           position: absolute;
           z-index: 9999;
           bottom: 20px;
@@ -106,16 +105,22 @@
           font-weight: bold;
           color: white;
           /* background-color: white; */
-          background-color: var(--translucent-black);;
+          background-color: var(--leaflet-popup-bg-color);
           padding: 5px;
           border: 3px solid green;
           border-radius: 10px;
         }
 
+        .clear-button.light {
+          color: black;
+          background-color: var(--leaflet-popup-bg-color);
+          border: 3px solid green;
+        }
+
         .leaflet-popup {
           /* background-color: black; */
-          background-color: var(--translucent-black);
-          border: 3px solid white; /* White border */
+          background-color: var(--leaflet-popup-bg-color);
+          border: var(--leaflet-popup-border);
           border-radius: 10px;
           width: 200px;
           height: 200px;
@@ -132,13 +137,13 @@
             background-color: var(--translucent);
         }
 
-        .leaflet-popup-close-button {
+        /* .leaflet-popup-close-button {
           background-color: white;
           color: white;
-        }
+        } */
 
         .leaflet-popup-close-button > span {
-          color: white;
+          color: var(--font-color);
         }
 
         /* Updated .popup-wrapper without box-shadow */
@@ -163,7 +168,7 @@
 
         .country-label {
             background-color: rgba(0, 0, 0, 0); /* Completely transparent background */
-            color: #ffffff; /* White text */
+            color: var(--font-color);
             border: none;
             box-shadow: none;
         }
@@ -183,8 +188,14 @@
           border-radius: 15px; /* Half of the height */
           outline: blue auto 5px; /* Blue outline when focused */
           background-color: black; /* Black background when focused */
-          color: white; /* White text */
+          color: white;
           caret-color: white; /* blinking cursor */
+        }
+
+        .country-input.light {
+          color: black;
+          background-color: white;
+          caret-color: black;
         }
 
         .reveal-button {
