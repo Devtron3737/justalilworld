@@ -16,8 +16,15 @@
      crossorigin=""/>
 
      <style>
+        :root {
+            --translucent: rgba(0, 0, 0, 0);
+            --translucent-black: rgba(0, 0, 0, 0.85); /* Black with 70% opacity */
+        }
+
         body {
-          background-color: beige;
+          /* background-color: beige; */
+          background-color: #000000;
+          color: beige;
         }
 
         #container-of-all {
@@ -50,6 +57,21 @@
           margin-left: 10px;
         }
 
+        .modal {
+          position: relative;
+          top: 0;
+          left: 0;
+          width: 90vw;
+          height: 85vh;
+          background-color: white;
+          border-radius: 5px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          z-index: 10000;
+        }
+
         #root {
           display: flex;
           flex-direction: column;
@@ -58,11 +80,13 @@
           /* dont show children past its borders */
           overflow: hidden;
           border-radius: 5px;
+          box-shadow: 0 30px 40px rgba(0,0,0,.1);
         }
 
         .leaflet-container {
           /* set background color to a light blue */
-          background-color: #e0f3f8;
+          /* background-color: #e0f3f8; */
+          background-color: #000000;
         }
 
         #country-count {
@@ -75,37 +99,112 @@
 
         #clear-button {
           position: absolute;
+          z-index: 9999;
           bottom: 20px;
           left: 10px;
           font-size: 1rem;
           font-weight: bold;
-          background-color: white;
+          color: white;
+          /* background-color: white; */
+          background-color: var(--translucent-black);;
           padding: 5px;
-          border: 1px solid black;
+          border: 3px solid green;
           border-radius: 10px;
         }
 
+        .leaflet-popup {
+          /* background-color: black; */
+          background-color: var(--translucent-black);
+          border: 3px solid white; /* White border */
+          border-radius: 10px;
+          width: 200px;
+          height: 200px;
+          padding: 0;
+        }
+
+        .leaflet-popup-content-wrapper,
+        .popup-wrapper,
+        .leaflet-popup-content {
+            border: none;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            background-color: var(--translucent);
+        }
+
+        .leaflet-popup-close-button {
+          background-color: white;
+          color: white;
+        }
+
+        .leaflet-popup-close-button > span {
+          color: white;
+        }
+
+        /* Updated .popup-wrapper without box-shadow */
         .popup-wrapper {
+          width: 100%;
+          height: 100%;
+          /* background-color: #f9f9f9; */
+          font-family: Arial, sans-serif;
           display: flex;
           flex-direction: column;
           align-items: center;
+          justify-content: space-around;
+          box-sizing: border-box; /* padding wont increase divs height */
+          padding-top: 20px;
+          padding-bottom: 20px;
+        }
+
+        /* Remove the triangle - Assuming Leaflet's default CSS creates it */
+        .leaflet-popup-tip-container {
+          display: none;
+        }
+
+        .country-input {
+          /* width: 200px; */
+          /* height: 30px; */
+          font-size: 15px;
+          padding: 5px 10px;
+          /* border: 1px solid #ccc; */
+          /* border-radius: 4px; */
+          /* box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); */
+
+          border: none; /* No borders */
+          width: 120px; /* Same width as .reveal-button */
+          height:25px; /* Same height as .reveal-button */
+          background-color: grey;
+          color: white; /* White text */
+          caret-color: white; /* blinking cursor */
+        }
+
+        .country-input:focus {
+            border-radius: 15px; /* Half of the height */
+            outline: blue auto 5px; /* Blue outline when focused */
+            background-color: black; /* Black background when focused */
         }
 
         .reveal-button {
           text-align: center;
-          width: 100px;
-          height: 20px;
-          font-size: 12px;
-          padding: 5px;
-          margin: 10px;
-          color: white;
-          font-weight: 800;
-          background-color: red;
-          border-style: none;
+          width: 120px; /* Wider button */
+          height: 30px; /* Taller button */
+          font-size: 14px; /* Larger font size */
+          color: red;
+          font-weight: bold;
+          background-color: rgba(0, 123, 255, 0); /* Translucent */
+          border-radius: 4px; /* Rounded corners */
+          border-style: solid;
+          border-color: red; /* Blue border */
         }
 
         .reveal-button:hover {
           cursor: pointer;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Larger shadow on hover */
+        }
+
+        .hint-button {
+          color: orange;
+          border-color: orange;
         }
      </style>
 
@@ -143,3 +242,4 @@
     -->
   </body>
 </html>
+

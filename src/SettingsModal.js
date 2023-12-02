@@ -16,7 +16,7 @@ class SettingsModal extends React.Component {
             </span>
             <h2>Settings</h2>
           </div>
-          <div>What's not shown, must be guessed.</div>
+          <div>What's not shown, must be guessed!!!</div>
           <div className="modal-body">
             <div className="checkbox">
               <label>
@@ -44,3 +44,5 @@ class SettingsModal extends React.Component {
     );
   }
 }
+
+export default SettingsModal;

@@ -9,23 +9,50 @@ class Countries extends React.Component {
     // this happens when we clear the map
     if (this.props.correctCountries.length === 0) {
       layer.setStyle({
-        color: "#2aa1ff",
+        // color: "#2aa1ff",
+        // color: "#e0f3f8",
+        color: "#99a6a9",
+        weight: 2,
       });
     }
 
+    // set layer to purple when it is clicked
+    layer.on("click", () => {
+      // if the country is not already in the correct or revealed list, set the
+      // color to purple
+      if (
+        !this.props.correctCountries.includes(country.properties.COUNTRY) &&
+        !this.props.revealedCountries.includes(country.properties.COUNTRY)
+      ) {
+        layer.setStyle({ color: "#6a0dad" });
+      }
+    });
+
+    // const popupOuterWrapper = document.createElement("div");
+    // popupOuterWrapper.classList.add("popup-outer-wrapper");
     const wrapperDiv = document.createElement("div");
     wrapperDiv.classList.add("popup-wrapper");
+    // popupOuterWrapper.appendChild(wrapperDiv); // Append the actual content wrapper to the outer wrapper
 
     const input = this.createInput(country, layer);
+    input.classList.add("country-input");
+    input.setAttribute("autocomplete", "off"); // disable 1password
+
     const revealButton = this.createRevealButton(country, layer, input);
+    const hintButton = this.createHintButton(country, input);
 
     wrapperDiv.appendChild(input);
+    wrapperDiv.appendChild(hintButton);
     wrapperDiv.appendChild(revealButton);
 
     // add code here if you want to do something while the user is typing
     // input.addEventListener("input", (e) => {});
 
+    // original
     layer.bindPopup(wrapperDiv);
+
+    // from chatgpt
+    // layer.bindPopup(popupOuterWrapper); // Bind the outer wrapper as the popup
 
     // if the popup is open, focus the input
     layer.on("popupopen", () => {
@@ -64,13 +91,13 @@ class Countries extends React.Component {
     input.type = "text";
     input.placeholder = "Country Name";
     input.autofocus = true;
-    input.style.width = "100px";
-    input.style.height = "20px";
-    input.style.fontSize = "12px";
-    input.style.padding = "5px";
-    input.style.margin = "5px";
-    input.style.border = "0px solid #ccc";
-    input.style.borderRadius = "3px";
+    // input.style.width = "100px";
+    // input.style.height = "20px";
+    // input.style.fontSize = "12px";
+    // input.style.padding = "5px";
+    // input.style.margin = "5px";
+    // input.style.border = "0px solid #ccc";
+    // input.style.borderRadius = "3px";
 
     // check whether the country id correct or not when enter is pressed
     input.addEventListener("keyup", (e) => {
@@ -81,7 +108,10 @@ class Countries extends React.Component {
 
       // if the country is already in the correct or revealed list, just
       // close the popup
-      if (this.props.correctCountries.includes(countryName) || this.props.revealedCountries.includes(countryName)) {
+      if (
+        this.props.correctCountries.includes(countryName) ||
+        this.props.revealedCountries.includes(countryName)
+      ) {
         layer.closePopup();
         return;
       }
@@ -128,9 +158,26 @@ class Countries extends React.Component {
 
       // set the input value to the country name
       input.value = countryName;
+      input.focus();
     });
 
     return revealButton;
+  }
+
+  createHintButton(country, input) {
+    // Create a hint button
+    const hintButton = document.createElement("button");
+    hintButton.textContent = "Hint";
+    hintButton.classList.add("reveal-button", "hint-button"); // Use same class for styling
+
+    // When the hint button is clicked, set the input value to the first letter of the country name
+    hintButton.addEventListener("click", () => {
+      const countryName = country.properties.COUNTRY;
+      input.value = countryName[0]; // Set input to the first letter of the country name
+      input.focus();
+    });
+
+    return hintButton;
   }
 
   render() {

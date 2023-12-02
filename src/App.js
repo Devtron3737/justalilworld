@@ -77,16 +77,16 @@ class App extends React.Component {
             <img src="taly_face.png" alt="Taly" width="20" height="20" />
             <div id="site-title"> It's just a lil world. </div>
           </div>
-          <img
+          {/* <img
             src="icon_gear.png"
             alt="Settings"
             width="20"
             height="20"
             onClick={this.toggleSettingsModal}
-          />
+          /> */}
         </div>
         <div id="root">
-          {this.state.showSettingsModal ? (
+          {/* {this.state.showSettingsModal ? (
             <SettingsModal
               showCountryName={this.state.showCountryName}
               showCountryGdp={this.state.showCountryGdp}
@@ -94,7 +94,7 @@ class App extends React.Component {
               toggleCountryName={this.toggleCountryName}
               toggleCountryGdp={this.toggleCountryGdp}
             />
-          ) : null}
+          ) : null} */}
           <MapContainer
             style={{ height: "85vh", width: "90vw" }}
             center={[0, 0]}
