@@ -4,14 +4,34 @@ import { GeoJSON } from "react-leaflet";
 import data from "./country_data.json";
 
 class Countries extends React.Component {
+  // Define your colors
+  // colors = [
+  //   "rgba(255, 105, 180, 0.4)",
+  //   "rgba(255, 255, 0, 0.4)",
+  //   "rgba(165, 42, 42, 0.4)",
+  //   "rgba(0, 128, 0, 0.4)",
+  // ];
+
+  colors = [
+    "rgba(0, 0, 255, 0.4)", // Blue
+    "rgba(128, 0, 32, 0.4)", // Burgundy
+    "rgba(210, 180, 140, 0.4)", // Tan
+    "rgba(0, 100, 0, 0.4)", // Dark Green
+  ];
+
   onEachCountry = (country, layer) => {
     // set all the layers to blue if the state is empty
     // this happens when we clear the map
     if (this.props.correctCountries.length === 0) {
+      // Randomly select a color from the colors array
+      const color = this.colors[Math.floor(Math.random() * this.colors.length)];
+
       layer.setStyle({
         // color: "#2aa1ff",
         // color: "#e0f3f8",
-        color: "#99a6a9",
+        // color: "#99a6a9",
+        // color: color,
+        color: "rgba(0, 0, 255, 0.7)", // Blue,
         weight: 2,
       });
     }
@@ -24,7 +44,11 @@ class Countries extends React.Component {
         !this.props.correctCountries.includes(country.properties.COUNTRY) &&
         !this.props.revealedCountries.includes(country.properties.COUNTRY)
       ) {
-        layer.setStyle({ color: "#6a0dad" });
+        layer.setStyle({
+          color: "#450970",
+          fillColor: "#513b82",
+          fillOpacity: 1,
+        });
       }
     });
 
@@ -89,15 +113,8 @@ class Countries extends React.Component {
     // create a text input form html
     const input = document.createElement("input");
     input.type = "text";
-    input.placeholder = "Country Name";
+    input.placeholder = "your guess";
     input.autofocus = true;
-    // input.style.width = "100px";
-    // input.style.height = "20px";
-    // input.style.fontSize = "12px";
-    // input.style.padding = "5px";
-    // input.style.margin = "5px";
-    // input.style.border = "0px solid #ccc";
-    // input.style.borderRadius = "3px";
 
     // check whether the country id correct or not when enter is pressed
     input.addEventListener("keyup", (e) => {
@@ -120,17 +137,25 @@ class Countries extends React.Component {
         // got it right on the first try
         // add the country to state and turn it green
         this.props.addCorrectCountry(countryName);
-        layer.setStyle({ color: "green" });
+        layer.setStyle({
+          color: "#00c61e",
+          fillColor: "#015d01",
+          fillOpacity: 1,
+        });
       } else if (this.isCorrectLaterGuess(e, countryName)) {
         // they got it wrong at first, but got it right later
         // add the country to "later guess" state and turn it orange
         this.props.addLaterCorrectCountry(countryName);
-        layer.setStyle({ color: "orange" });
+        layer.setStyle({
+          color: "orange",
+          fillColor: "#d48b00",
+          fillOpacity: 1,
+        });
       } else {
         // they got it wrong
         // add the country to state and turn it red
         this.props.addIncorrectCountry(countryName);
-        layer.setStyle({ color: "red" });
+        layer.setStyle({ color: "red", fillColor: "#931414", fillOpacity: 1 });
       }
 
       layer.closePopup();
