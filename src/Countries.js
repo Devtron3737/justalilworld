@@ -98,10 +98,12 @@ class Countries extends React.Component {
   }
 
   setCountryCorrectStyle(layer, countryName) {
+    const darkMode = this.props.darkMode;
+
     // set the layers to green if the country is in the correct list
     layer.setStyle({
-      color: "#00c61e",
-      fillColor: "#015d01",
+      color: darkMode ? "#00c61e" : "#015d01",
+      fillColor: darkMode ? "#015d01" : "#00e122",
       fillOpacity: 1,
     });
 
@@ -113,9 +115,11 @@ class Countries extends React.Component {
   }
 
   setCountryLaterCorrectStyle(layer, countryName) {
+    const darkMode = this.props.darkMode;
+
     layer.setStyle({
-      color: "orange",
-      fillColor: "#d48b00",
+      color: darkMode ? "#ffbd59" : "#f19100",
+      fillColor: darkMode ? "#d48b00" : "#ffbd59",
       fillOpacity: 1,
     });
 
@@ -127,9 +131,11 @@ class Countries extends React.Component {
   }
 
   setCountryIncorrectStyle(layer, countryName) {
+    const darkMode = this.props.darkMode;
+
     layer.setStyle({
-      color: "red",
-      fillColor: "#931414",
+      color: darkMode ? "#ff9292" : "#931414",
+      fillColor: darkMode ? "#931414" : "#ff9292",
       fillOpacity: 1,
     });
 
