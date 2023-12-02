@@ -138,6 +138,12 @@ class Countries extends React.Component {
           fillColor: "#d48b00",
           fillOpacity: 1,
         });
+
+        layer.bindTooltip(countryName, {
+          permanent: true,
+          direction: "center",
+          className: "country-label",
+        });
       } else {
         // they got it wrong
         // add the country to state and turn it red
@@ -168,6 +174,12 @@ class Countries extends React.Component {
           color: "red",
           fillColor: "#931414",
           fillOpacity: 1,
+        });
+
+        layer.bindTooltip(countryName, {
+          permanent: true,
+          direction: "center",
+          className: "country-label",
         });
       }
       this.props.addRevealedCountry(countryName);
