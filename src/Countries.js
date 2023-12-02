@@ -4,33 +4,14 @@ import { GeoJSON } from "react-leaflet";
 import data from "./country_data.json";
 
 class Countries extends React.Component {
-  // Define your colors
-  // colors = [
-  //   "rgba(255, 105, 180, 0.4)",
-  //   "rgba(255, 255, 0, 0.4)",
-  //   "rgba(165, 42, 42, 0.4)",
-  //   "rgba(0, 128, 0, 0.4)",
-  // ];
-
-  colors = [
-    "rgba(0, 0, 255, 0.4)", // Blue
-    "rgba(128, 0, 32, 0.4)", // Burgundy
-    "rgba(210, 180, 140, 0.4)", // Tan
-    "rgba(0, 100, 0, 0.4)", // Dark Green
-  ];
-
   onEachCountry = (country, layer) => {
     // set all the layers to blue if the state is empty
     // this happens when we clear the map
     if (this.props.correctCountries.length === 0) {
-      // Randomly select a color from the colors array
-      const color = this.colors[Math.floor(Math.random() * this.colors.length)];
-
       layer.setStyle({
         // color: "#2aa1ff",
         // color: "#e0f3f8",
         // color: "#99a6a9",
-        // color: color,
         color: "rgba(0, 0, 255, 0.7)", // Blue,
         weight: 2,
       });
@@ -177,7 +158,11 @@ class Countries extends React.Component {
       if (!this.props.correctCountries.includes(countryName)) {
         // if the country was already correct, leave it
         this.props.addIncorrectCountry(countryName);
-        layer.setStyle({ color: "red" });
+        layer.setStyle({
+          color: "red",
+          fillColor: "#931414",
+          fillOpacity: 1,
+        });
       }
       this.props.addRevealedCountry(countryName);
 
