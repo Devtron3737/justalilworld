@@ -123,6 +123,12 @@ class Countries extends React.Component {
           fillColor: "#015d01",
           fillOpacity: 1,
         });
+
+        layer.bindTooltip(countryName, {
+          permanent: true,
+          direction: "center",
+          className: "country-label",
+        });
       } else if (this.isCorrectLaterGuess(e, countryName)) {
         // they got it wrong at first, but got it right later
         // add the country to "later guess" state and turn it orange
