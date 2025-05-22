@@ -4,6 +4,8 @@ import { MapContainer } from "react-leaflet";
 import Countries from "./Countries";
 import SettingsModal from "./SettingsModal";
 import "./App.css";
+import usGeoJsonData from "./us_data.json";
+import worldGeoJsonData from "./country_data.json";
 
 class App extends React.Component {
   state = {
@@ -12,10 +14,17 @@ class App extends React.Component {
     incorrectCountries: [],
     laterCorrectCountries: [],
     revealedCountries: [],
+    correctStates: [],
+    incorrectStates: [],
+    laterCorrectStates: [],
+    revealedStates: [],
     showSettingsModal: false,
     showCountryName: true,
     showCountryGdp: false,
     darkMode: true,
+    currentMapView: "world",
+    usGeoJsonData,
+    worldGeoJsonData,
   };
 
   clearAll = () => {
@@ -25,6 +34,34 @@ class App extends React.Component {
       incorrectCountries: [],
       laterCorrectCountries: [],
       revealedCountries: [],
+      correctStates: [],
+      incorrectStates: [],
+      laterCorrectStates: [],
+      revealedStates: [],
+    });
+  };
+
+  addCorrectState = (state) => {
+    this.setState({
+      correctStates: this.state.correctStates.concat([state]),
+    });
+  };
+
+  addIncorrectState = (state) => {
+    this.setState({
+      incorrectStates: this.state.incorrectStates.concat([state]),
+    });
+  };
+
+  addLaterCorrectState = (state) => {
+    this.setState({
+      laterCorrectStates: this.state.laterCorrectStates.concat([state]),
+    });
+  };
+
+  addRevealedState = (state) => {
+    this.setState({
+      revealedStates: this.state.revealedStates.concat([state]),
     });
   };
 
@@ -95,6 +132,21 @@ class App extends React.Component {
     });
   };
 
+  toggleMapView = () => {
+    this.setState((prevState) => ({
+      currentMapView: prevState.currentMapView === "world" ? "US" : "world",
+      mapKey: Math.random(),
+      correctCountries: [],
+      incorrectCountries: [],
+      laterCorrectCountries: [],
+      revealedCountries: [],
+      correctStates: [],
+      incorrectStates: [],
+      laterCorrectStates: [],
+      revealedStates: [],
+    }));
+  };
+
   render() {
     const darkMode = this.state.darkMode;
 
@@ -117,12 +169,23 @@ class App extends React.Component {
             height="40"
             onClick={this.toggleDarkMode}
           />
+          <button
+            onClick={this.toggleMapView}
+            className={darkMode ? "" : "light"}
+            style={{ marginLeft: "10px" }}
+          >
+            Switch View
+          </button>
         </div>
         <div id="root">
           <MapContainer
-            key={darkMode ? "dark" : "light"} // force a re-render when dark mode is toggled
-            center={[0, 0]}
-            zoom={1}
+            key={this.state.currentMapView + (darkMode ? "-dark" : "-light")}
+            center={
+              this.state.currentMapView === "world"
+                ? [0, 0]
+                : [39.8283, -98.5795]
+            }
+            zoom={this.state.currentMapView === "world" ? 1 : 4}
             style={{
               height: "85vh",
               width: "90vw",
@@ -131,7 +194,11 @@ class App extends React.Component {
           >
             <div className={darkMode ? "country-count" : "country-count light"}>
               {" "}
-              {this.state.correctCountries.length}/195{" "}
+              {this.state.currentMapView === "world"
+                ? this.state.correctCountries.length
+                : this.state.correctStates.length}
+              /
+              {this.state.currentMapView === "world" ? 195 : 50}{" "}
             </div>
             <div
               className={darkMode ? "clear-button" : "clear-button light"}
@@ -141,14 +208,56 @@ class App extends React.Component {
             </div>
             <Countries
               mapKey={this.state.mapKey}
-              correctCountries={this.state.correctCountries}
-              addCorrectCountry={this.addCorrectCountry}
-              incorrectCountries={this.state.incorrectCountries}
               darkMode={darkMode}
-              addIncorrectCountry={this.addIncorrectCountry}
-              revealedCountries={this.state.revealedCountries}
-              addRevealedCountry={this.addRevealedCountry}
-              addLaterCorrectCountry={this.addLaterCorrectCountry}
+              geoJsonDataFeatures={
+                this.state.currentMapView === "world"
+                  ? this.state.worldGeoJsonData.features
+                  : this.state.usGeoJsonData.features
+              }
+              correctItems={
+                this.state.currentMapView === "world"
+                  ? this.state.correctCountries
+                  : this.state.correctStates
+              }
+              incorrectItems={
+                this.state.currentMapView === "world"
+                  ? this.state.incorrectCountries
+                  : this.state.incorrectStates
+              }
+              laterCorrectItems={
+                this.state.currentMapView === "world"
+                  ? this.state.laterCorrectCountries
+                  : this.state.laterCorrectStates
+              }
+              revealedItems={
+                this.state.currentMapView === "world"
+                  ? this.state.revealedCountries
+                  : this.state.revealedStates
+              }
+              addCorrectItem={
+                this.state.currentMapView === "world"
+                  ? this.addCorrectCountry
+                  : this.addCorrectState
+              }
+              addIncorrectItem={
+                this.state.currentMapView === "world"
+                  ? this.addIncorrectCountry
+                  : this.addIncorrectState
+              }
+              addLaterCorrectItem={
+                this.state.currentMapView === "world"
+                  ? this.addLaterCorrectCountry
+                  : this.addLaterCorrectState
+              }
+              addRevealedItem={
+                this.state.currentMapView === "world"
+                  ? this.addRevealedCountry
+                  : this.addRevealedState
+              }
+              nameProperty={
+                this.state.currentMapView === "world" ? "COUNTRY" : "name"
+              }
+              totalItems={this.state.currentMapView === "world" ? 195 : 50}
             />
           </MapContainer>
         </div>
