@@ -36,3 +36,26 @@
     transform: rotate(360deg);
   }
 }
+
+.map-toggle-button {
+  padding: 8px 12px;
+  border: 1px solid white;
+  border-radius: 4px;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.map-toggle-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.map-toggle-button.light {
+  border-color: black;
+  color: black;
+}
+
+.map-toggle-button.light:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}

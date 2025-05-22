@@ -1,14 +1,12 @@
 import React from "react";
 import { GeoJSON } from "react-leaflet";
 
-import data from "./country_data.json";
-
 class Countries extends React.Component {
   focusedLayer = null;
 
-  onEachCountry = (country, layer) => {
-    this.setupInitialCountryStyle(country, layer);
-    this.setupClickHandler(country, layer);
+  onEachFeature = (feature, layer) => {
+    this.setupInitialFeatureStyle(feature, layer);
+    this.setupClickHandler(feature, layer);
 
     const wrapperDiv = document.createElement("div");
     wrapperDiv.classList.add("popup-wrapper");
@@ -17,7 +15,7 @@ class Countries extends React.Component {
       wrapperDiv.classList.add("light");
     }
 
-    const input = this.createInput(country, layer);
+    const input = this.createInput(feature, layer);
     input.classList.add("country-input");
     input.setAttribute("autocomplete", "off"); // disable 1password
 
@@ -25,8 +23,8 @@ class Countries extends React.Component {
       input.classList.add("light");
     }
 
-    const revealButton = this.createRevealButton(country, layer, input);
-    const hintButton = this.createHintButton(country, input);
+    const revealButton = this.createRevealButton(feature, layer, input);
+    const hintButton = this.createHintButton(feature, input);
 
     wrapperDiv.appendChild(input);
     wrapperDiv.appendChild(hintButton);
@@ -40,21 +38,21 @@ class Countries extends React.Component {
     });
 
     layer.on("popupclose", () => {
-      const countryName = country.properties.COUNTRY;
+      const featureName = feature.properties[this.props.nameProperty];
 
       if (this.focusedLayer === layer) {
         if (
-          !this.props.correctCountries.includes(countryName) &&
-          !this.props.revealedCountries.includes(countryName)
+          !this.props.correctItems.includes(featureName) &&
+          !this.props.revealedItems.includes(featureName)
         ) {
-          this.setDefaultCountryStyle(layer);
+          this.setDefaultFeatureStyle(layer);
         }
         this.focusedLayer = null;
       }
     });
   };
 
-  setDefaultCountryStyle = (layer) => {
+  setDefaultFeatureStyle = (layer) => {
     const darkMode = this.props.darkMode;
     layer.setStyle({
       color: darkMode ? "rgba(0, 0, 255, 0.7)" : "#2aa1ff",
@@ -64,7 +62,7 @@ class Countries extends React.Component {
     });
   };
 
-  setFocusedCountryStyle = (layer) => {
+  setFocusedFeatureStyle = (layer) => {
     layer.setStyle({
       color: "#450970",
       fillColor: "#513b82",
@@ -73,42 +71,39 @@ class Countries extends React.Component {
     });
   };
 
-  setupInitialCountryStyle(country, layer) {
-    const countryName = country.properties.COUNTRY;
+  setupInitialFeatureStyle(feature, layer) {
+    const featureName = feature.properties[this.props.nameProperty];
 
-    // set all the layers to blue if the state is empty
-    // this happens when we clear the map
-    if (this.props.correctCountries.length === 0) {
-      this.setDefaultCountryStyle(layer);
-    } else if (this.props.correctCountries.includes(countryName)) {
-      if (this.props.incorrectCountries.includes(countryName)) {
-        // country is in later correct list
-        this.setCountryLaterCorrectStyle(layer, countryName);
+    // need the setTimeout to ensure leaflect has initialized the tile and react has re-rendered
+    setTimeout(() => {
+      if (this.props.correctItems.length === 0) {
+        this.setDefaultFeatureStyle(layer);
+      } else if (this.props.correctItems.includes(featureName)) {
+        if (this.props.incorrectItems.includes(featureName)) {
+          this.setFeatureLaterCorrectStyle(layer, featureName);
+        } else {
+          this.setFeatureCorrectStyle(layer, featureName);
+        }
+      } else if (this.props.incorrectItems.includes(featureName)) {
+        this.setFeatureIncorrectStyle(layer, featureName);
       } else {
-        // country is in the correct list
-        this.setCountryCorrectStyle(layer, countryName);
+        this.setDefaultFeatureStyle(layer);
       }
-    } else if (this.props.incorrectCountries.includes(countryName)) {
-      // country is in incorrect list
-      this.setCountryIncorrectStyle(layer, countryName);
-    } else {
-      // country hasnt been attempted yet
-      this.setDefaultCountryStyle(layer);
-    }
+    }, 0);
   }
 
-  setupClickHandler = (country, layer) => {
+  setupClickHandler = (feature, layer) => {
     layer.on("click", () => {
-      const currentCountryName = country.properties.COUNTRY;
+      const currentFeatureName = feature.properties[this.props.nameProperty];
 
       // Reset previous focused layer's style
       if (this.focusedLayer && this.focusedLayer !== layer) {
-        const focusedLayerCountryName = this.focusedLayer.feature.properties.COUNTRY;
+        const focusedLayerFeatureName = this.focusedLayer.feature.properties[this.props.nameProperty];
         if (
-          !this.props.correctCountries.includes(focusedLayerCountryName) &&
-          !this.props.revealedCountries.includes(focusedLayerCountryName)
+          !this.props.correctItems.includes(focusedLayerFeatureName) &&
+          !this.props.revealedItems.includes(focusedLayerFeatureName)
         ) {
-          this.setDefaultCountryStyle(this.focusedLayer);
+          this.setDefaultFeatureStyle(this.focusedLayer);
         }
       }
 
@@ -117,127 +112,143 @@ class Countries extends React.Component {
 
       // Apply "focused" (purple) style to the current layer
       if (
-        !this.props.correctCountries.includes(currentCountryName) &&
-        !this.props.revealedCountries.includes(currentCountryName)
+        !this.props.correctItems.includes(currentFeatureName) &&
+        !this.props.revealedItems.includes(currentFeatureName)
       ) {
-        this.setFocusedCountryStyle(layer);
+        this.setFocusedFeatureStyle(layer);
       }
     });
   };
 
-  isCorrectFirstGuess(e, countryName) {
-    // check if country is already in the correct list
-    if (!this.props.incorrectCountries.includes(countryName)) {
-      return this.isCorrectCountry(e, countryName);
+  isCorrectFirstGuess(e, featureName) {
+    // check if feature is already in the correct list
+    if (!this.props.incorrectItems.includes(featureName)) {
+      return this.isCorrectFeature(e, featureName);
     }
 
     // isnt their first guess
     return false;
   }
 
-  setCountryCorrectStyle(layer, countryName) {
+  setFeatureCorrectStyle(layer, featureName) {
     const darkMode = this.props.darkMode;
 
-    // set the layers to green if the country is in the correct list
-    layer.setStyle({
-      color: darkMode ? "#00c61e" : "#015d01",
-      fillColor: darkMode ? "#015d01" : "#00e122",
-      fillOpacity: 1,
-    });
+    // need the setTimeout to ensure leaflect has initialized the tile and react has re-rendered
+    setTimeout(() => {
+      layer.setStyle({
+        stroke: true,
+        weight: 1,
+        color: darkMode ? "#00c61e" : "#015d01",
+        fillColor: darkMode ? "#015d01" : "#00e122",
+        fillOpacity: 0.7,
+        opacity: 1,
+      });
 
-    layer.bindTooltip(countryName, {
-      permanent: true,
-      direction: "center",
-      className: "country-label",
-    });
+      layer.bindTooltip(featureName, {
+        permanent: true,
+        direction: "center",
+        className: "country-label",
+      });
+    }, 0);
   }
 
-  setCountryLaterCorrectStyle(layer, countryName) {
+  setFeatureLaterCorrectStyle(layer, featureName) {
     const darkMode = this.props.darkMode;
 
-    layer.setStyle({
-      color: darkMode ? "#ffbd59" : "#f19100",
-      fillColor: darkMode ? "#d48b00" : "#ffbd59",
-      fillOpacity: 1,
-    });
+    // need the setTimeout to ensure leaflect has initialized the tile and react has re-rendered
+    setTimeout(() => {
+      layer.setStyle({
+        stroke: true,
+        weight: 1,
+        color: darkMode ? "#d48b00" : "#f19100",
+        fillColor: darkMode ? "#f19100" : "#ffbd59",
+        fillOpacity: 0.7,
+        opacity: 1,
+      });
 
-    layer.bindTooltip(countryName, {
-      permanent: true,
-      direction: "center",
-      className: "country-label",
-    });
+      layer.bindTooltip(featureName, {
+        permanent: true,
+        direction: "center",
+        className: "country-label",
+      });
+    }, 0);
   }
 
-  setCountryIncorrectStyle(layer, countryName) {
+  setFeatureIncorrectStyle(layer, featureName) {
     const darkMode = this.props.darkMode;
 
-    layer.setStyle({
-      color: darkMode ? "#ff9292" : "#931414",
-      fillColor: darkMode ? "#931414" : "#ff9292",
-      fillOpacity: 1,
-    });
+    // need the setTimeout to ensure leaflect has initialized the tile and react has re-rendered// need the setTimeout to ensure leaflect has initialized the tile and react has re-rendered
+    setTimeout(() => {
+      layer.setStyle({
+        stroke: true,
+        weight: 1,
+        color: darkMode ? "#ff0000" : "#931414",
+        fillColor: darkMode ? "#931414" : "#ff0000",
+        fillOpacity: 0.7,
+        opacity: 1,
+      });
 
-    layer.bindTooltip(countryName, {
-      permanent: true,
-      direction: "center",
-      className: "country-label",
-    });
+      // Remove the tooltip binding for incorrect guesses
+      if (layer.getTooltip()) {
+        layer.unbindTooltip();
+      }
+    }, 0);
   }
 
-  isCorrectLaterGuess(e, countryName) {
-    // check if country is already in the correct list
-    if (this.props.incorrectCountries.includes(countryName)) {
-      return this.isCorrectCountry(e, countryName);
+  isCorrectLaterGuess(e, featureName) {
+    // check if feature is already in the correct list
+    if (this.props.incorrectItems.includes(featureName)) {
+      return this.isCorrectFeature(e, featureName);
     }
 
     return false;
   }
 
-  isCorrectCountry(e, countryName) {
+  isCorrectFeature(e, featureName) {
     return e.target.value
       .toLowerCase()
-      .includes(countryName.slice(0, 3).toLowerCase());
+      .includes(featureName.slice(0, 3).toLowerCase());
   }
 
-  createInput(country, layer) {
+  createInput(feature, layer) {
     // create a text input form html
     const input = document.createElement("input");
     input.type = "text";
     input.placeholder = "your guess";
     input.autofocus = true;
 
-    // check whether the country id correct or not when enter is pressed
+    // check whether the feature id correct or not when enter is pressed
     input.addEventListener("keyup", (e) => {
       // return unless enter is pressed
       if (e.keyCode !== 13) return;
 
-      const countryName = country.properties.COUNTRY;
+      const featureName = feature.properties[this.props.nameProperty];
 
-      // if the country is already in the correct or revealed list, just
+      // if the feature is already in the correct or revealed list, just
       // close the popup
       if (
-        this.props.correctCountries.includes(countryName) ||
-        this.props.revealedCountries.includes(countryName)
+        this.props.correctItems.includes(featureName) ||
+        this.props.revealedItems.includes(featureName)
       ) {
         layer.closePopup();
         return;
       }
 
-      if (this.isCorrectFirstGuess(e, countryName)) {
+      if (this.isCorrectFirstGuess(e, featureName)) {
         // got it right on the first try
-        // add the country to state and turn it green
-        this.props.addCorrectCountry(countryName);
-        this.setCountryCorrectStyle(layer, countryName);
-      } else if (this.isCorrectLaterGuess(e, countryName)) {
+        // add the feature to state and turn it green
+        this.props.addCorrectItem(featureName);
+        this.setFeatureCorrectStyle(layer, featureName);
+      } else if (this.isCorrectLaterGuess(e, featureName)) {
         // they got it wrong at first, but got it right later
-        // add the country to "later guess" state and turn it orange
-        this.props.addLaterCorrectCountry(countryName);
-        this.setCountryLaterCorrectStyle(layer, countryName);
+        // add the feature to "later guess" state and turn it orange
+        this.props.addLaterCorrectItem(featureName);
+        this.setFeatureLaterCorrectStyle(layer, featureName);
       } else {
         // they got it wrong
-        // add the country to state and turn it red
-        this.props.addIncorrectCountry(countryName);
-        layer.setStyle({ color: "red", fillColor: "#931414", fillOpacity: 1 });
+        // add the feature to state and turn it red
+        this.props.addIncorrectItem(featureName);
+        this.setFeatureIncorrectStyle(layer, featureName);
       }
 
       layer.closePopup();
@@ -246,8 +257,8 @@ class Countries extends React.Component {
     return input;
   }
 
-  createRevealButton(country, layer, input) {
-    // create a button to reveal the country name
+  createRevealButton(feature, layer, input) {
+    // create a button to reveal the feature name
     const revealButton = document.createElement("button");
     revealButton.innerHTML = "Reveal";
 
@@ -258,25 +269,25 @@ class Countries extends React.Component {
     }
 
     revealButton.addEventListener("click", () => {
-      const countryName = country.properties.COUNTRY;
+      const featureName = feature.properties[this.props.nameProperty];
 
-      // if the country wasnt already guessed, add it to the incorrect and revealed list
-      if (!this.props.correctCountries.includes(countryName)) {
-        // if the country was already correct, leave it
-        this.props.addIncorrectCountry(countryName);
-        this.setCountryIncorrectStyle(layer, countryName);
+      // if the feature wasnt already guessed, add it to the incorrect and revealed list
+      if (!this.props.correctItems.includes(featureName)) {
+        // if the feature was already correct, leave it
+        this.props.addIncorrectItem(featureName);
+        this.setFeatureIncorrectStyle(layer, featureName);
       }
-      this.props.addRevealedCountry(countryName);
+      this.props.addRevealedItem(featureName);
 
-      // set the input value to the country name
-      input.value = countryName;
+      // set the input value to the feature name
+      input.value = featureName;
       input.focus();
     });
 
     return revealButton;
   }
 
-  createHintButton(country, input) {
+  createHintButton(feature, input) {
     // Create a hint button
     const hintButton = document.createElement("button");
     hintButton.textContent = "Hint";
@@ -287,10 +298,10 @@ class Countries extends React.Component {
 
     hintButton.classList.add("reveal-button", "hint-button"); // Use same class for styling
 
-    // When the hint button is clicked, set the input value to the first letter of the country name
+    // When the hint button is clicked, set the input value to the first letter of the feature name
     hintButton.addEventListener("click", () => {
-      const countryName = country.properties.COUNTRY;
-      input.value = countryName[0]; // Set input to the first letter of the country name
+      const featureName = feature.properties[this.props.nameProperty];
+      input.value = featureName[0]; // Set input to the first letter of the feature name
       input.focus();
     });
 
@@ -301,8 +312,8 @@ class Countries extends React.Component {
     return (
       <GeoJSON
         key={this.props.mapKey} // this is needed to force a re-render
-        data={data.features}
-        onEachFeature={this.onEachCountry}
+        data={this.props.geoJsonDataFeatures}
+        onEachFeature={this.onEachFeature}
       />
     );
   }
