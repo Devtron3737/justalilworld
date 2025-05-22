@@ -4,6 +4,8 @@ import { GeoJSON } from "react-leaflet";
 import data from "./country_data.json";
 
 class Countries extends React.Component {
+  focusedLayer = null;
+
   onEachCountry = (country, layer) => {
     this.setupInitialCountryStyle(country, layer);
     this.setupClickHandler(country, layer);
@@ -36,19 +38,48 @@ class Countries extends React.Component {
     layer.on("popupopen", () => {
       input.focus();
     });
+
+    layer.on("popupclose", () => {
+      const countryName = country.properties.COUNTRY;
+
+      if (this.focusedLayer === layer) {
+        if (
+          !this.props.correctCountries.includes(countryName) &&
+          !this.props.revealedCountries.includes(countryName)
+        ) {
+          this.setDefaultCountryStyle(layer);
+        }
+        this.focusedLayer = null;
+      }
+    });
+  };
+
+  setDefaultCountryStyle = (layer) => {
+    const darkMode = this.props.darkMode;
+    layer.setStyle({
+      color: darkMode ? "rgba(0, 0, 255, 0.7)" : "#2aa1ff",
+      weight: 2,
+      fillColor: darkMode ? "rgba(0, 0, 255, 0.2)" : "rgba(42, 161, 255, 0.2)",
+      fillOpacity: 0.2
+    });
+  };
+
+  setFocusedCountryStyle = (layer) => {
+    layer.setStyle({
+      color: "#450970",
+      fillColor: "#513b82",
+      fillOpacity: 1,
+      weight: 2
+    });
   };
 
   setupInitialCountryStyle(country, layer) {
-    const darkMode = this.props.darkMode;
     const countryName = country.properties.COUNTRY;
 
     // set all the layers to blue if the state is empty
     // this happens when we clear the map
     if (this.props.correctCountries.length === 0) {
-      layer.setStyle({
-        color: darkMode ? "rgba(0, 0, 255, 0.7)" : "#2aa1ff",
-        weight: 2,
-      });
+      this.setDefaultCountryStyle(layer);
     } else if (this.props.correctCountries.includes(countryName)) {
       if (this.props.incorrectCountries.includes(countryName)) {
         // country is in later correct list
@@ -62,27 +93,34 @@ class Countries extends React.Component {
       this.setCountryIncorrectStyle(layer, countryName);
     } else {
       // country hasnt been attempted yet
-      layer.setStyle({
-        color: darkMode ? "rgba(0, 0, 255, 0.7)" : "#2aa1ff",
-        weight: 2,
-      });
+      this.setDefaultCountryStyle(layer);
     }
   }
 
   setupClickHandler = (country, layer) => {
-    // set layer to purple when it is clicked
     layer.on("click", () => {
-      // if the country is not already in the correct or revealed list, set the
-      // color to purple
+      const currentCountryName = country.properties.COUNTRY;
+
+      // Reset previous focused layer's style
+      if (this.focusedLayer && this.focusedLayer !== layer) {
+        const focusedLayerCountryName = this.focusedLayer.feature.properties.COUNTRY;
+        if (
+          !this.props.correctCountries.includes(focusedLayerCountryName) &&
+          !this.props.revealedCountries.includes(focusedLayerCountryName)
+        ) {
+          this.setDefaultCountryStyle(this.focusedLayer);
+        }
+      }
+
+      // Update this.focusedLayer
+      this.focusedLayer = layer;
+
+      // Apply "focused" (purple) style to the current layer
       if (
-        !this.props.correctCountries.includes(country.properties.COUNTRY) &&
-        !this.props.revealedCountries.includes(country.properties.COUNTRY)
+        !this.props.correctCountries.includes(currentCountryName) &&
+        !this.props.revealedCountries.includes(currentCountryName)
       ) {
-        layer.setStyle({
-          color: "#450970",
-          fillColor: "#513b82",
-          fillOpacity: 1,
-        });
+        this.setFocusedCountryStyle(layer);
       }
     });
   };
