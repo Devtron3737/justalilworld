@@ -162,20 +162,30 @@ class App extends React.Component {
             />
             <div id="site-title"> It's just a lil world. </div>
           </div>
-          <img
-            src={darkMode ? "toggle_dark.png" : "toggle_light.png"}
-            alt="Light Mode Toggle"
-            width="50"
-            height="40"
-            onClick={this.toggleDarkMode}
-          />
-          <button
-            onClick={this.toggleMapView}
-            className={darkMode ? "" : "light"}
-            style={{ marginLeft: "10px" }}
+          <div
+            style={{
+              marginLeft: "auto",
+              display: "flex",
+              gap: "10px",
+              alignItems: "center",
+            }}
           >
-            Switch View
-          </button>
+            <button
+              onClick={this.toggleMapView}
+              className={`map-toggle-button ${darkMode ? "" : "light"}`}
+            >
+              {this.state.currentMapView === "world"
+                ? "Switch to US"
+                : "Switch to World"}
+            </button>
+            <img
+              src={darkMode ? "toggle_dark.png" : "toggle_light.png"}
+              alt="Light Mode Toggle"
+              width="50"
+              height="40"
+              onClick={this.toggleDarkMode}
+            />
+          </div>
         </div>
         <div id="root">
           <MapContainer
@@ -197,8 +207,7 @@ class App extends React.Component {
               {this.state.currentMapView === "world"
                 ? this.state.correctCountries.length
                 : this.state.correctStates.length}
-              /
-              {this.state.currentMapView === "world" ? 195 : 50}{" "}
+              /{this.state.currentMapView === "world" ? 195 : 50}{" "}
             </div>
             <div
               className={darkMode ? "clear-button" : "clear-button light"}

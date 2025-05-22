@@ -74,25 +74,22 @@ class Countries extends React.Component {
   setupInitialFeatureStyle(feature, layer) {
     const featureName = feature.properties[this.props.nameProperty];
 
-    // set all the layers to blue if the state is empty
-    // this happens when we clear the map
-    if (this.props.correctItems.length === 0) {
-      this.setDefaultFeatureStyle(layer);
-    } else if (this.props.correctItems.includes(featureName)) {
-      if (this.props.incorrectItems.includes(featureName)) {
-        // feature is in later correct list
-        this.setFeatureLaterCorrectStyle(layer, featureName);
+    // need the setTimeout to ensure leaflect has initialized the tile and react has re-rendered
+    setTimeout(() => {
+      if (this.props.correctItems.length === 0) {
+        this.setDefaultFeatureStyle(layer);
+      } else if (this.props.correctItems.includes(featureName)) {
+        if (this.props.incorrectItems.includes(featureName)) {
+          this.setFeatureLaterCorrectStyle(layer, featureName);
+        } else {
+          this.setFeatureCorrectStyle(layer, featureName);
+        }
+      } else if (this.props.incorrectItems.includes(featureName)) {
+        this.setFeatureIncorrectStyle(layer, featureName);
       } else {
-        // feature is in the correct list
-        this.setFeatureCorrectStyle(layer, featureName);
+        this.setDefaultFeatureStyle(layer);
       }
-    } else if (this.props.incorrectItems.includes(featureName)) {
-      // feature is in incorrect list
-      this.setFeatureIncorrectStyle(layer, featureName);
-    } else {
-      // feature hasnt been attempted yet
-      this.setDefaultFeatureStyle(layer);
-    }
+    }, 0);
   }
 
   setupClickHandler = (feature, layer) => {
@@ -136,50 +133,66 @@ class Countries extends React.Component {
   setFeatureCorrectStyle(layer, featureName) {
     const darkMode = this.props.darkMode;
 
-    // set the layers to green if the feature is in the correct list
-    layer.setStyle({
-      color: darkMode ? "#00c61e" : "#015d01",
-      fillColor: darkMode ? "#015d01" : "#00e122",
-      fillOpacity: 1,
-    });
+    // need the setTimeout to ensure leaflect has initialized the tile and react has re-rendered
+    setTimeout(() => {
+      layer.setStyle({
+        stroke: true,
+        weight: 1,
+        color: darkMode ? "#00c61e" : "#015d01",
+        fillColor: darkMode ? "#015d01" : "#00e122",
+        fillOpacity: 0.7,
+        opacity: 1,
+      });
 
-    layer.bindTooltip(featureName, {
-      permanent: true,
-      direction: "center",
-      className: "country-label", // Keep class name for now, can be generalized later if needed
-    });
+      layer.bindTooltip(featureName, {
+        permanent: true,
+        direction: "center",
+        className: "country-label",
+      });
+    }, 0);
   }
 
   setFeatureLaterCorrectStyle(layer, featureName) {
     const darkMode = this.props.darkMode;
 
-    layer.setStyle({
-      color: darkMode ? "#ffbd59" : "#f19100",
-      fillColor: darkMode ? "#d48b00" : "#ffbd59",
-      fillOpacity: 1,
-    });
+    // need the setTimeout to ensure leaflect has initialized the tile and react has re-rendered
+    setTimeout(() => {
+      layer.setStyle({
+        stroke: true,
+        weight: 1,
+        color: darkMode ? "#d48b00" : "#f19100",
+        fillColor: darkMode ? "#f19100" : "#ffbd59",
+        fillOpacity: 0.7,
+        opacity: 1,
+      });
 
-    layer.bindTooltip(featureName, {
-      permanent: true,
-      direction: "center",
-      className: "country-label", // Keep class name for now
-    });
+      layer.bindTooltip(featureName, {
+        permanent: true,
+        direction: "center",
+        className: "country-label",
+      });
+    }, 0);
   }
 
   setFeatureIncorrectStyle(layer, featureName) {
     const darkMode = this.props.darkMode;
 
-    layer.setStyle({
-      color: darkMode ? "#ff9292" : "#931414",
-      fillColor: darkMode ? "#931414" : "#ff9292",
-      fillOpacity: 1,
-    });
+    // need the setTimeout to ensure leaflect has initialized the tile and react has re-rendered// need the setTimeout to ensure leaflect has initialized the tile and react has re-rendered
+    setTimeout(() => {
+      layer.setStyle({
+        stroke: true,
+        weight: 1,
+        color: darkMode ? "#ff0000" : "#931414",
+        fillColor: darkMode ? "#931414" : "#ff0000",
+        fillOpacity: 0.7,
+        opacity: 1,
+      });
 
-    layer.bindTooltip(featureName, {
-      permanent: true,
-      direction: "center",
-      className: "country-label", // Keep class name for now
-    });
+      // Remove the tooltip binding for incorrect guesses
+      if (layer.getTooltip()) {
+        layer.unbindTooltip();
+      }
+    }, 0);
   }
 
   isCorrectLaterGuess(e, featureName) {
@@ -235,7 +248,7 @@ class Countries extends React.Component {
         // they got it wrong
         // add the feature to state and turn it red
         this.props.addIncorrectItem(featureName);
-        layer.setStyle({ color: "red", fillColor: "#931414", fillOpacity: 1 });
+        this.setFeatureIncorrectStyle(layer, featureName);
       }
 
       layer.closePopup();
