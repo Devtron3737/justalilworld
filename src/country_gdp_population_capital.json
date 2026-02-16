@@ -1,0 +1,122 @@
+[
+  {
+    "country": "United States",
+    "gdp_usd": 26000000000000,
+    "population": 331000000,
+    "capital": "Washington, D.C."
+  },
+  {
+    "country": "China",
+    "gdp_usd": 17000000000000,
+    "population": 1440000000,
+    "capital": "Beijing"
+  },
+  {
+    "country": "India",
+    "gdp_usd": 3500000000000,
+    "population": 1400000000,
+    "capital": "New Delhi"
+  },
+  {
+    "country": "Germany",
+    "gdp_usd": 4200000000000,
+    "population": 83000000,
+    "capital": "Berlin"
+  },
+  {
+    "country": "Brazil",
+    "gdp_usd": 2000000000000,
+    "population": 214000000,
+    "capital": "Bras\u00edlia"
+  },
+  {
+    "country": "Japan",
+    "gdp_usd": 5000000000000,
+    "population": 125000000,
+    "capital": "Tokyo"
+  },
+  {
+    "country": "Russia",
+    "gdp_usd": 1600000000000,
+    "population": 146000000,
+    "capital": "Moscow"
+  },
+  {
+    "country": "Mexico",
+    "gdp_usd": 1300000000000,
+    "population": 126000000,
+    "capital": "Mexico City"
+  },
+  {
+    "country": "France",
+    "gdp_usd": 3000000000000,
+    "population": 67000000,
+    "capital": "Paris"
+  },
+  {
+    "country": "United Kingdom",
+    "gdp_usd": 3200000000000,
+    "population": 67000000,
+    "capital": "London"
+  },
+  {
+    "country": "Canada",
+    "gdp_usd": 2200000000000,
+    "population": 39000000,
+    "capital": "Ottawa"
+  },
+  {
+    "country": "South Korea",
+    "gdp_usd": 1800000000000,
+    "population": 52000000,
+    "capital": "Seoul"
+  },
+  {
+    "country": "Indonesia",
+    "gdp_usd": 1300000000000,
+    "population": 275000000,
+    "capital": "Jakarta"
+  },
+  {
+    "country": "South Africa",
+    "gdp_usd": 400000000000,
+    "population": 60000000,
+    "capital": "Pretoria"
+  },
+  {
+    "country": "Nigeria",
+    "gdp_usd": 500000000000,
+    "population": 220000000,
+    "capital": "Abuja"
+  },
+  {
+    "country": "Argentina",
+    "gdp_usd": 600000000000,
+    "population": 45000000,
+    "capital": "Buenos Aires"
+  },
+  {
+    "country": "Australia",
+    "gdp_usd": 1800000000000,
+    "population": 26000000,
+    "capital": "Canberra"
+  },
+  {
+    "country": "Italy",
+    "gdp_usd": 2900000000000,
+    "population": 59000000,
+    "capital": "Rome"
+  },
+  {
+    "country": "Turkey",
+    "gdp_usd": 900000000000,
+    "population": 85000000,
+    "capital": "Ankara"
+  },
+  {
+    "country": "Saudi Arabia",
+    "gdp_usd": 1100000000000,
+    "population": 35000000,
+    "capital": "Riyadh"
+  }
+]
