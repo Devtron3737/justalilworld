@@ -1,0 +1,3231 @@
+{
+  "type": "FeatureCollection",
+  "name": "World_Countries__Generalized_",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 1,
+        "COUNTRY": "Afghanistan",
+        "ISO": "AF",
+        "COUNTRYAFF": "Afghanistan",
+        "AFF_ISO": "AF",
+        "SHAPE_Length": 50.803209721660615,
+        "SHAPE_Area": 62.5667138767718,
+        "gdp": "19469022207.6852"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 2,
+        "COUNTRY": "Albania",
+        "ISO": "AL",
+        "COUNTRYAFF": "Albania",
+        "AFF_ISO": "AL",
+        "SHAPE_Length": 9.625037968399916,
+        "SHAPE_Area": 3.0735399758125164,
+        "gdp": "11863865978.0942"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 3,
+        "COUNTRY": "Algeria",
+        "ISO": "DZ",
+        "COUNTRYAFF": "Algeria",
+        "AFF_ISO": "DZ",
+        "SHAPE_Length": 70.5400821564478,
+        "SHAPE_Area": 213.51346147509466,
+        "gdp": "159049096745.249"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 4,
+        "COUNTRY": "American Samoa",
+        "ISO": "AS",
+        "COUNTRYAFF": "United States",
+        "AFF_ISO": "US",
+        "SHAPE_Length": 0.6001243585261151,
+        "SHAPE_Area": 0.013719718651008992,
+        "gdp": "658000000"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 5,
+        "COUNTRY": "Andorra",
+        "ISO": "AD",
+        "COUNTRYAFF": "Andorra",
+        "AFF_ISO": "AD",
+        "SHAPE_Length": 0.9373517644863992,
+        "SHAPE_Area": 0.05558516501538127,
+        "gdp": "2858517699.11504"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 6,
+        "COUNTRY": "Angola",
+        "ISO": "AO",
+        "COUNTRYAFF": "Angola",
+        "AFF_ISO": "AO",
+        "SHAPE_Length": 58.8734697951819,
+        "SHAPE_Area": 103.8130590743424,
+        "gdp": "95335111741.2025"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 7,
+        "COUNTRY": "Anguilla",
+        "ISO": "AI",
+        "COUNTRYAFF": "United Kingdom",
+        "AFF_ISO": "GB",
+        "SHAPE_Length": 0.4683886761118368,
+        "SHAPE_Area": 0.007797911345447418
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 8,
+        "COUNTRY": "Antarctica",
+        "ISO": "AQ",
+        "COUNTRYAFF": " ",
+        "AFF_ISO": " ",
+        "SHAPE_Length": 1564.1441425802343,
+        "SHAPE_Area": 5672.928286290314
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 9,
+        "COUNTRY": "Antigua and Barbuda",
+        "ISO": "AG",
+        "COUNTRYAFF": "Antigua and Barbuda",
+        "AFF_ISO": "AG",
+        "SHAPE_Length": 1.1629013903962897,
+        "SHAPE_Area": 0.045625950546068925,
+        "gdp": "1460144703.7037"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 10,
+        "COUNTRY": "Argentina",
+        "ISO": "AR",
+        "COUNTRYAFF": "Argentina",
+        "AFF_ISO": "AR",
+        "SHAPE_Length": 138.75134834861066,
+        "SHAPE_Area": 278.30896466063774,
+        "gdp": "545476103427.247"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 11,
+        "COUNTRY": "Armenia",
+        "ISO": "AM",
+        "COUNTRYAFF": "Armenia",
+        "AFF_ISO": "AM",
+        "SHAPE_Length": 12.161116881285686,
+        "SHAPE_Area": 3.1422905259954814,
+        "gdp": "10572298341.5618"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 12,
+        "COUNTRY": "Aruba",
+        "ISO": "AW",
+        "COUNTRYAFF": "Netherlands",
+        "AFF_ISO": "NL",
+        "SHAPE_Length": 0.6103404310424548,
+        "SHAPE_Area": 0.016597619369282116,
+        "gdp": "2584463687.15084"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 13,
+        "COUNTRY": "Australia",
+        "ISO": "AU",
+        "COUNTRYAFF": "Australia",
+        "AFF_ISO": "AU",
+        "SHAPE_Length": 252.16523769541772,
+        "SHAPE_Area": 695.5399244416323,
+        "gdp": "1204616439828.41"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 14,
+        "COUNTRY": "Austria",
+        "ISO": "AT",
+        "COUNTRYAFF": "Austria",
+        "AFF_ISO": "AT",
+        "SHAPE_Length": 22.067937102913696,
+        "SHAPE_Area": 10.039440689619145,
+        "gdp": "390799991147.468"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 15,
+        "COUNTRY": "Azerbaijan",
+        "ISO": "AZ",
+        "COUNTRYAFF": "Azerbaijan",
+        "AFF_ISO": "AZ",
+        "SHAPE_Length": 28.57513485816526,
+        "SHAPE_Area": 17.40714244993344,
+        "gdp": "37847715736.0406"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 16,
+        "COUNTRY": "Azores",
+        "ISO": "PT",
+        "COUNTRYAFF": "Portugal",
+        "AFF_ISO": "PT",
+        "SHAPE_Length": 6.5225785510484435,
+        "SHAPE_Area": 0.26465608376696204,
+        "gdp": "204836597909.466"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 17,
+        "COUNTRY": "Bahamas",
+        "ISO": "BS",
+        "COUNTRYAFF": "Bahamas",
+        "AFF_ISO": "BS",
+        "SHAPE_Length": 25.487758726173265,
+        "SHAPE_Area": 1.0790499877281832,
+        "gdp": "11261800000"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 18,
+        "COUNTRY": "Bahrain",
+        "ISO": "BH",
+        "COUNTRYAFF": "Bahrain",
+        "AFF_ISO": "BH",
+        "SHAPE_Length": 1.6537259527565582,
+        "SHAPE_Area": 0.05773471522904573,
+        "gdp": "32179069148.9362"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 19,
+        "COUNTRY": "Bangladesh",
+        "ISO": "BD",
+        "COUNTRYAFF": "Bangladesh",
+        "AFF_ISO": "BD",
+        "SHAPE_Length": 42.01193839211598,
+        "SHAPE_Area": 12.222453625075069,
+        "gdp": "221415162445.648"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 20,
+        "COUNTRY": "Barbados",
+        "ISO": "BB",
+        "COUNTRYAFF": "Barbados",
+        "AFF_ISO": "BB",
+        "SHAPE_Length": 0.813985327257854,
+        "SHAPE_Area": 0.037212108475710666,
+        "gdp": "4529050000"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 21,
+        "COUNTRY": "Belarus",
+        "ISO": "BY",
+        "COUNTRYAFF": "Belarus",
+        "AFF_ISO": "BY",
+        "SHAPE_Length": 31.668547910578543,
+        "SHAPE_Area": 28.157809438344092,
+        "gdp": "47407217531.162"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 22,
+        "COUNTRY": "Belgium",
+        "ISO": "BE",
+        "COUNTRYAFF": "Belgium",
+        "AFF_ISO": "BE",
+        "SHAPE_Length": 11.999002719042611,
+        "SHAPE_Area": 3.8955185269793695,
+        "gdp": "467955709817.539"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 23,
+        "COUNTRY": "Belize",
+        "ISO": "BZ",
+        "COUNTRYAFF": "Belize",
+        "AFF_ISO": "BZ",
+        "SHAPE_Length": 8.551634367043183,
+        "SHAPE_Area": 1.8769824407062676,
+        "gdp": "1741100000"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 24,
+        "COUNTRY": "Benin",
+        "ISO": "BJ",
+        "COUNTRYAFF": "Benin",
+        "AFF_ISO": "BJ",
+        "SHAPE_Length": 17.06361733309299,
+        "SHAPE_Area": 9.574104435693025,
+        "gdp": "8583031398.21675"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 25,
+        "COUNTRY": "Bermuda",
+        "ISO": "BM",
+        "COUNTRYAFF": "United Kingdom",
+        "AFF_ISO": "GB",
+        "SHAPE_Length": 0.39109478560794697,
+        "SHAPE_Area": 0.0020552258458537264,
+        "gdp": "5573710000"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 26,
+        "COUNTRY": "Bhutan",
+        "ISO": "BT",
+        "COUNTRYAFF": "Bhutan",
+        "AFF_ISO": "BT",
+        "SHAPE_Length": 9.20549298923639,
+        "SHAPE_Area": 3.6355587107828087,
+        "gdp": "2212638830.39439"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 27,
+        "COUNTRY": "Bolivia",
+        "ISO": "BO",
+        "COUNTRYAFF": "Bolivia, Plurinational State of",
+        "AFF_ISO": "BO",
+        "SHAPE_Length": 52.48368723936023,
+        "SHAPE_Area": 92.19010459439659,
+        "gdp": "33806395513.7482"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 28,
+        "COUNTRY": "Bonaire",
+        "ISO": "BQ",
+        "COUNTRYAFF": "Netherlands",
+        "AFF_ISO": "NL",
+        "SHAPE_Length": 0.828287379320699,
+        "SHAPE_Area": 0.026260327987433267
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 29,
+        "COUNTRY": "Bosnia and Herzegovina",
+        "ISO": "BA",
+        "COUNTRYAFF": "Bosnia and Herzegovina",
+        "AFF_ISO": "BA",
+        "SHAPE_Length": 13.090584199435744,
+        "SHAPE_Area": 5.7984328489774635,
+        "gdp": "16910277133.6463"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 30,
+        "COUNTRY": "Botswana",
+        "ISO": "BW",
+        "COUNTRYAFF": "Botswana",
+        "AFF_ISO": "BW",
+        "SHAPE_Length": 33.929944069070146,
+        "SHAPE_Area": 50.677520686807,
+        "gdp": "15581137273.7728"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 31,
+        "COUNTRY": "Bouvet Island",
+        "ISO": "BV",
+        "COUNTRYAFF": "Norway",
+        "AFF_ISO": "NO",
+        "SHAPE_Length": 0.3584867195889179,
+        "SHAPE_Area": 0.007953880562495288
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 32,
+        "COUNTRY": "Brazil",
+        "ISO": "BR",
+        "COUNTRYAFF": "Brazil",
+        "AFF_ISO": "BR",
+        "SHAPE_Length": 248.75671493085503,
+        "SHAPE_Area": 707.0506761266017,
+        "gdp": "1796186586414.45"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 33,
+        "COUNTRY": "British Indian Ocean Territory",
+        "ISO": "IO",
+        "COUNTRYAFF": "United Kingdom",
+        "AFF_ISO": "GB",
+        "SHAPE_Length": 0.8495971751156024,
+        "SHAPE_Area": 0.00740530646928914
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 34,
+        "COUNTRY": "British Virgin Islands",
+        "ISO": "VG",
+        "COUNTRYAFF": "United Kingdom",
+        "AFF_ISO": "GB",
+        "SHAPE_Length": 0.6393676468754097,
+        "SHAPE_Area": 0.009867141224508021
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 35,
+        "COUNTRY": "Brunei Darussalam",
+        "ISO": "BN",
+        "COUNTRYAFF": "Brunei Darussalam",
+        "AFF_ISO": "BN",
+        "SHAPE_Length": 4.918827699017101,
+        "SHAPE_Area": 0.4682991423961551,
+        "gdp": "11400653731.9916"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 36,
+        "COUNTRY": "Bulgaria",
+        "ISO": "BG",
+        "COUNTRYAFF": "Bulgaria",
+        "AFF_ISO": "BG",
+        "SHAPE_Length": 20.315189370795917,
+        "SHAPE_Area": 12.210431292027248,
+        "gdp": "53237882472.7108"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 37,
+        "COUNTRY": "Burkina Faso",
+        "ISO": "BF",
+        "COUNTRYAFF": "Burkina Faso",
+        "AFF_ISO": "BF",
+        "SHAPE_Length": 27.00742272785342,
+        "SHAPE_Area": 22.634154203902398,
+        "gdp": "11693235542.0671"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 38,
+        "COUNTRY": "Burundi",
+        "ISO": "BI",
+        "COUNTRYAFF": "Burundi",
+        "AFF_ISO": "BI",
+        "SHAPE_Length": 7.7147502014895295,
+        "SHAPE_Area": 2.2123870500832896,
+        "gdp": "3007029030.4001"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 39,
+        "COUNTRY": "Cabo Verde",
+        "ISO": "CV",
+        "COUNTRYAFF": "Cabo Verde",
+        "AFF_ISO": "CV",
+        "SHAPE_Length": 6.512619642084465,
+        "SHAPE_Area": 0.34035845174407864,
+        "gdp": "1617467435.77007"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 40,
+        "COUNTRY": "Cambodia",
+        "ISO": "KH",
+        "COUNTRYAFF": "Cambodia",
+        "AFF_ISO": "KH",
+        "SHAPE_Length": 21.993998442989238,
+        "SHAPE_Area": 15.128532415231975,
+        "gdp": "20016747754.0192"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 41,
+        "COUNTRY": "Cameroon",
+        "ISO": "CM",
+        "COUNTRYAFF": "Cameroon",
+        "AFF_ISO": "CM",
+        "SHAPE_Length": 41.96059556529919,
+        "SHAPE_Area": 37.972712714948436,
+        "gdp": "32217497470.489"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 42,
+        "COUNTRY": "Canada",
+        "ISO": "CA",
+        "COUNTRYAFF": "Canada",
+        "AFF_ISO": "CA",
+        "SHAPE_Length": 2210.6848260138636,
+        "SHAPE_Area": 1694.0252397452803,
+        "gdp": "1529760492201.35"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 43,
+        "COUNTRY": "Canarias",
+        "ISO": "ES",
+        "COUNTRYAFF": "Spain",
+        "AFF_ISO": "ES",
+        "SHAPE_Length": 9.491474171073312,
+        "SHAPE_Area": 0.6953356572604613,
+        "gdp": "1237255019653.86"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 44,
+        "COUNTRY": "Cayman Islands",
+        "ISO": "KY",
+        "COUNTRYAFF": "United Kingdom",
+        "AFF_ISO": "GB",
+        "SHAPE_Length": 0.7336132651749013,
+        "SHAPE_Area": 0.017931510000032895,
+        "gdp": "3207032512.94205"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 45,
+        "COUNTRY": "Central African Republic",
+        "ISO": "CF",
+        "COUNTRYAFF": "Central African Republic",
+        "AFF_ISO": "CF",
+        "SHAPE_Length": 42.20808147757309,
+        "SHAPE_Area": 50.60214217914825,
+        "gdp": "1756124677.19671"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 46,
+        "COUNTRY": "Chad",
+        "ISO": "TD",
+        "COUNTRYAFF": "Chad",
+        "AFF_ISO": "TD",
+        "SHAPE_Length": 51.67198997758735,
+        "SHAPE_Area": 107.29232525194666,
+        "gdp": "9600761473.78738"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 47,
+        "COUNTRY": "Chile",
+        "ISO": "CL",
+        "COUNTRYAFF": "Chile",
+        "AFF_ISO": "CL",
+        "SHAPE_Length": 331.2498812017058,
+        "SHAPE_Area": 77.69299213824351,
+        "gdp": "247027912574.35"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 48,
+        "COUNTRY": "China",
+        "ISO": "CN",
+        "COUNTRYAFF": "China",
+        "AFF_ISO": "CN",
+        "SHAPE_Length": 312.49359384566833,
+        "SHAPE_Area": 953.8440476261343,
+        "gdp": "11199145157649.2"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 49,
+        "COUNTRY": "Christmas Island",
+        "ISO": "CX",
+        "COUNTRYAFF": "Australia",
+        "AFF_ISO": "AU",
+        "SHAPE_Length": 0.40513905864702066,
+        "SHAPE_Area": 0.010237485041054345
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 50,
+        "COUNTRY": "Cocos Islands",
+        "ISO": "CC",
+        "COUNTRYAFF": "Australia",
+        "AFF_ISO": "AU",
+        "SHAPE_Length": 0.17667056809314668,
+        "SHAPE_Area": 0.001490438305655244
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 51,
+        "COUNTRY": "Colombia",
+        "ISO": "CO",
+        "COUNTRYAFF": "Colombia",
+        "AFF_ISO": "CO",
+        "SHAPE_Length": 70.687532245425,
+        "SHAPE_Area": 92.58048961575415,
+        "gdp": "282462551366.878"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 52,
+        "COUNTRY": "Comoros",
+        "ISO": "KM",
+        "COUNTRYAFF": "Comoros",
+        "AFF_ISO": "KM",
+        "SHAPE_Length": 3.0607698941369557,
+        "SHAPE_Area": 0.14240887158077942,
+        "gdp": "616654490.413179"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 53,
+        "COUNTRY": "Congo",
+        "ISO": "CG",
+        "COUNTRYAFF": "Congo",
+        "AFF_ISO": "CG",
+        "SHAPE_Length": 37.860482598504646,
+        "SHAPE_Area": 27.9742901116424,
+        "gdp": "7833508878.9666"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 54,
+        "COUNTRY": "Congo DRC",
+        "ISO": "CD",
+        "COUNTRYAFF": "Congo, The Democratic Republic of the",
+        "AFF_ISO": "CD",
+        "SHAPE_Length": 83.4316450942307,
+        "SHAPE_Area": 189.79090476576567,
+        "gdp": "31930856401.9163"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 55,
+        "COUNTRY": "Cook Islands",
+        "ISO": "CK",
+        "COUNTRYAFF": "New Zealand",
+        "AFF_ISO": "NZ",
+        "SHAPE_Length": 0.9806641638097543,
+        "SHAPE_Area": 0.013073457998731464
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 56,
+        "COUNTRY": "Costa Rica",
+        "ISO": "CR",
+        "COUNTRYAFF": "Costa Rica",
+        "AFF_ISO": "CR",
+        "SHAPE_Length": 14.717325499514581,
+        "SHAPE_Area": 4.211862967058902,
+        "gdp": "57435507212.256"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 57,
+        "COUNTRY": "C\u00f4te d'Ivoire",
+        "ISO": "CI",
+        "COUNTRYAFF": "C\u00f4te d'Ivoire",
+        "AFF_ISO": "CI",
+        "SHAPE_Length": 31.576751561663016,
+        "SHAPE_Area": 26.34049667443191,
+        "gdp": "36372613022.942"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 58,
+        "COUNTRY": "Croatia",
+        "ISO": "HR",
+        "COUNTRYAFF": "Croatia",
+        "AFF_ISO": "HR",
+        "SHAPE_Length": 37.58922916953761,
+        "SHAPE_Area": 6.384641823568353,
+        "gdp": "50714957390.5378"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 59,
+        "COUNTRY": "Cuba",
+        "ISO": "CU",
+        "COUNTRYAFF": "Cuba",
+        "AFF_ISO": "CU",
+        "SHAPE_Length": 38.15246667558401,
+        "SHAPE_Area": 9.527284672867085,
+        "gdp": "87132800000"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 60,
+        "COUNTRY": "Curacao",
+        "ISO": "CW",
+        "COUNTRYAFF": "Netherlands",
+        "AFF_ISO": "NL",
+        "SHAPE_Length": 1.1603925670367083,
+        "SHAPE_Area": 0.03924872900536959
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 61,
+        "COUNTRY": "Cyprus",
+        "ISO": "CY",
+        "COUNTRYAFF": "Cyprus",
+        "AFF_ISO": "CY",
+        "SHAPE_Length": 6.037301126417972,
+        "SHAPE_Area": 0.9026626002102401,
+        "gdp": "20047013274.3363"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 62,
+        "COUNTRY": "Czech Republic",
+        "ISO": "CZ",
+        "COUNTRYAFF": "Czechia",
+        "AFF_ISO": "CZ",
+        "SHAPE_Length": 18.44958435391905,
+        "SHAPE_Area": 9.824209515787862,
+        "gdp": "195305084919.138"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 63,
+        "COUNTRY": "Denmark",
+        "ISO": "DK",
+        "COUNTRYAFF": "Denmark",
+        "AFF_ISO": "DK",
+        "SHAPE_Length": 45.381839341866446,
+        "SHAPE_Area": 6.142939118248709,
+        "gdp": "306899653409.601"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 64,
+        "COUNTRY": "Djibouti",
+        "ISO": "DJ",
+        "COUNTRYAFF": "Djibouti",
+        "AFF_ISO": "DJ",
+        "SHAPE_Length": 7.277602889103078,
+        "SHAPE_Area": 1.7777627770145505,
+        "gdp": "1727000000"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 65,
+        "COUNTRY": "Dominica",
+        "ISO": "DM",
+        "COUNTRYAFF": "Dominica",
+        "AFF_ISO": "DM",
+        "SHAPE_Length": 1.0971176426233469,
+        "SHAPE_Area": 0.06483510982055199,
+        "gdp": "581484031.851852"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 66,
+        "COUNTRY": "Dominican Republic",
+        "ISO": "DO",
+        "COUNTRYAFF": "Dominican Republic",
+        "AFF_ISO": "DO",
+        "SHAPE_Length": 13.253816255630623,
+        "SHAPE_Area": 4.147569469351207,
+        "gdp": "71583553487.5646"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 67,
+        "COUNTRY": "Ecuador",
+        "ISO": "EC",
+        "COUNTRYAFF": "Ecuador",
+        "AFF_ISO": "EC",
+        "SHAPE_Length": 35.22053672812076,
+        "SHAPE_Area": 20.75361507184431,
+        "gdp": "98613972000"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 68,
+        "COUNTRY": "Egypt",
+        "ISO": "EG",
+        "COUNTRYAFF": "Egypt",
+        "AFF_ISO": "EG",
+        "SHAPE_Length": 53.23047693110977,
+        "SHAPE_Area": 90.49112755176021,
+        "gdp": "332791045963.807"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 69,
+        "COUNTRY": "El Salvador",
+        "ISO": "SV",
+        "COUNTRYAFF": "El Salvador",
+        "AFF_ISO": "SV",
+        "SHAPE_Length": 7.253571591104706,
+        "SHAPE_Area": 1.7190350301908486,
+        "gdp": "26797470000"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 70,
+        "COUNTRY": "Equatorial Guinea",
+        "ISO": "GQ",
+        "COUNTRYAFF": "Equatorial Guinea",
+        "AFF_ISO": "GQ",
+        "SHAPE_Length": 8.191006998117931,
+        "SHAPE_Area": 2.1882069457138513,
+        "gdp": "10684804794.0361"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 71,
+        "COUNTRY": "Eritrea",
+        "ISO": "ER",
+        "COUNTRYAFF": "Eritrea",
+        "AFF_ISO": "ER",
+        "SHAPE_Length": 25.165078732384828,
+        "SHAPE_Area": 10.178633127639223,
+        "gdp": "2607739837.39837"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 72,
+        "COUNTRY": "Estonia",
+        "ISO": "EE",
+        "COUNTRYAFF": "Estonia",
+        "AFF_ISO": "EE",
+        "SHAPE_Length": 23.652049218294255,
+        "SHAPE_Area": 7.107813366252959,
+        "gdp": "23337907618.5174"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 73,
+        "COUNTRY": "Eswatini",
+        "ISO": "SZ",
+        "COUNTRYAFF": "Eswatini",
+        "AFF_ISO": "SZ",
+        "SHAPE_Length": 5.0249030874324285,
+        "SHAPE_Area": 1.5499876380014534,
+        "gdp": "3720649374.57512"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 74,
+        "COUNTRY": "Ethiopia",
+        "ISO": "ET",
+        "COUNTRYAFF": "Ethiopia",
+        "AFF_ISO": "ET",
+        "SHAPE_Length": 46.81031538635138,
+        "SHAPE_Area": 92.72276067337496,
+        "gdp": "72374224249.3997"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 75,
+        "COUNTRY": "Falkland Islands",
+        "ISO": "FK",
+        "COUNTRYAFF": "United Kingdom",
+        "AFF_ISO": "GB",
+        "SHAPE_Length": 19.08256365677707,
+        "SHAPE_Area": 1.495383317335109
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 76,
+        "COUNTRY": "Faroe Islands",
+        "ISO": "FO",
+        "COUNTRYAFF": "Denmark",
+        "AFF_ISO": "DK",
+        "SHAPE_Length": 5.743744579144126,
+        "SHAPE_Area": 0.25430991925320173,
+        "gdp": "2476746087.18917"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 77,
+        "COUNTRY": "Fiji",
+        "ISO": "FJ",
+        "COUNTRYAFF": "Fiji",
+        "AFF_ISO": "FJ",
+        "SHAPE_Length": 13.105270002018221,
+        "SHAPE_Area": 1.5374437651983899,
+        "gdp": "4703632978.46947"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 78,
+        "COUNTRY": "Finland",
+        "ISO": "FI",
+        "COUNTRYAFF": "Finland",
+        "AFF_ISO": "FI",
+        "SHAPE_Length": 69.12609419184676,
+        "SHAPE_Area": 62.65498465348901,
+        "gdp": "238502900311.9"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 79,
+        "COUNTRY": "France",
+        "ISO": "FR",
+        "COUNTRYAFF": "France",
+        "AFF_ISO": "FR",
+        "SHAPE_Length": 65.8470426672871,
+        "SHAPE_Area": 64.34832450292733,
+        "gdp": "2465453975282.24"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 80,
+        "COUNTRY": "French Guiana",
+        "ISO": "GF",
+        "COUNTRYAFF": "France",
+        "AFF_ISO": "FR",
+        "SHAPE_Length": 12.253084971909615,
+        "SHAPE_Area": 6.807576960410494
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 81,
+        "COUNTRY": "French Polynesia",
+        "ISO": "PF",
+        "COUNTRYAFF": "France",
+        "AFF_ISO": "FR",
+        "SHAPE_Length": 3.9302106218284307,
+        "SHAPE_Area": 0.175332140034676,
+        "gdp": "3447543137.9415"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 82,
+        "COUNTRY": "French Southern Territories",
+        "ISO": "TF",
+        "COUNTRYAFF": "France",
+        "AFF_ISO": "FR",
+        "SHAPE_Length": 11.404235408627985,
+        "SHAPE_Area": 0.9226819269151434
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 83,
+        "COUNTRY": "Gabon",
+        "ISO": "GA",
+        "COUNTRYAFF": "Gabon",
+        "AFF_ISO": "GA",
+        "SHAPE_Length": 32.27056260890871,
+        "SHAPE_Area": 21.185802083892128,
+        "gdp": "14213558130.1817"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 84,
+        "COUNTRY": "Gambia",
+        "ISO": "GM",
+        "COUNTRYAFF": "Gambia",
+        "AFF_ISO": "GM",
+        "SHAPE_Length": 10.776105749076166,
+        "SHAPE_Area": 0.8950541731863562,
+        "gdp": "964599178.129102"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 85,
+        "COUNTRY": "Georgia",
+        "ISO": "GE",
+        "COUNTRYAFF": "Georgia",
+        "AFF_ISO": "GE",
+        "SHAPE_Length": 17.85694546263096,
+        "SHAPE_Area": 7.623240710232813,
+        "gdp": "14378016729.1587"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 86,
+        "COUNTRY": "Germany",
+        "ISO": "DE",
+        "COUNTRYAFF": "Germany",
+        "AFF_ISO": "DE",
+        "SHAPE_Length": 56.11503765230791,
+        "SHAPE_Area": 45.87205396458168,
+        "gdp": "3477796274496.8"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 87,
+        "COUNTRY": "Ghana",
+        "ISO": "GH",
+        "COUNTRYAFF": "Ghana",
+        "AFF_ISO": "GH",
+        "SHAPE_Length": 23.013663547855476,
+        "SHAPE_Area": 19.611815684055205,
+        "gdp": "42689783733.873"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 88,
+        "COUNTRY": "Gibraltar",
+        "ISO": "GI",
+        "COUNTRYAFF": "United Kingdom",
+        "AFF_ISO": "GB",
+        "SHAPE_Length": 0.1448325686093724,
+        "SHAPE_Area": 0.0007858350046851669
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 89,
+        "COUNTRY": "Glorioso Islands",
+        "ISO": "TF",
+        "COUNTRYAFF": "France",
+        "AFF_ISO": "FR",
+        "SHAPE_Length": 0.07923081122627457,
+        "SHAPE_Area": 0.000407338812381131
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 90,
+        "COUNTRY": "Greece",
+        "ISO": "GR",
+        "COUNTRYAFF": "Greece",
+        "AFF_ISO": "GR",
+        "SHAPE_Length": 80.39673688945621,
+        "SHAPE_Area": 13.5434265368375,
+        "gdp": "192690813126.86"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 91,
+        "COUNTRY": "Greenland",
+        "ISO": "GL",
+        "COUNTRYAFF": "Denmark",
+        "AFF_ISO": "DK",
+        "SHAPE_Length": 942.2213291055206,
+        "SHAPE_Area": 660.9271652358599,
+        "gdp": "2220380802.33059"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 92,
+        "COUNTRY": "Grenada",
+        "ISO": "GD",
+        "COUNTRYAFF": "Grenada",
+        "AFF_ISO": "GD",
+        "SHAPE_Length": 0.6814093146685558,
+        "SHAPE_Area": 0.02875311761870323,
+        "gdp": "1056188592.59259"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 93,
+        "COUNTRY": "Guadeloupe",
+        "ISO": "GP",
+        "COUNTRYAFF": "France",
+        "AFF_ISO": "FR",
+        "SHAPE_Length": 2.534388487944681,
+        "SHAPE_Area": 0.1396063379897919
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 94,
+        "COUNTRY": "Guam",
+        "ISO": "GU",
+        "COUNTRYAFF": "United States",
+        "AFF_ISO": "US",
+        "SHAPE_Length": 1.1200162628818424,
+        "SHAPE_Area": 0.048057242326132295,
+        "gdp": "5793000000"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 95,
+        "COUNTRY": "Guatemala",
+        "ISO": "GT",
+        "COUNTRYAFF": "Guatemala",
+        "AFF_ISO": "GT",
+        "SHAPE_Length": 16.76014995074416,
+        "SHAPE_Area": 9.193014687524387,
+        "gdp": "68763255963.8943"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 96,
+        "COUNTRY": "Guernsey",
+        "ISO": "GG",
+        "COUNTRYAFF": "United Kingdom",
+        "AFF_ISO": "GB",
+        "SHAPE_Length": 0.41694500423002157,
+        "SHAPE_Area": 0.009025177408068292
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 97,
+        "COUNTRY": "Guinea",
+        "ISO": "GN",
+        "COUNTRYAFF": "Guinea",
+        "AFF_ISO": "GN",
+        "SHAPE_Length": 31.72019247391492,
+        "SHAPE_Area": 20.238618319490683,
+        "gdp": "8200248003.02206"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 98,
+        "COUNTRY": "Guinea-Bissau",
+        "ISO": "GW",
+        "COUNTRYAFF": "Guinea-Bissau",
+        "AFF_ISO": "GW",
+        "SHAPE_Length": 17.26042443685003,
+        "SHAPE_Area": 2.760992398306108,
+        "gdp": "1164944509.94419"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 99,
+        "COUNTRY": "Guyana",
+        "ISO": "GY",
+        "COUNTRYAFF": "Guyana",
+        "AFF_ISO": "GY",
+        "SHAPE_Length": 25.70759852958417,
+        "SHAPE_Area": 17.17521475584393,
+        "gdp": "3502397094.43099"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 100,
+        "COUNTRY": "Haiti",
+        "ISO": "HT",
+        "COUNTRYAFF": "Haiti",
+        "AFF_ISO": "HT",
+        "SHAPE_Length": 14.031049405548238,
+        "SHAPE_Area": 2.330595454510239,
+        "gdp": "8022638721.92013"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 101,
+        "COUNTRY": "Heard Island and McDonald Islands",
+        "ISO": "HM",
+        "COUNTRYAFF": "Australia",
+        "AFF_ISO": "AU",
+        "SHAPE_Length": 1.2327439793941046,
+        "SHAPE_Area": 0.05368148393530425
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 102,
+        "COUNTRY": "Honduras",
+        "ISO": "HN",
+        "COUNTRYAFF": "Honduras",
+        "AFF_ISO": "HN",
+        "SHAPE_Length": 20.971746921877838,
+        "SHAPE_Area": 9.422323996347506,
+        "gdp": "21516938909.5686"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 103,
+        "COUNTRY": "Hungary",
+        "ISO": "HU",
+        "COUNTRYAFF": "Hungary",
+        "AFF_ISO": "HU",
+        "SHAPE_Length": 18.16204448086423,
+        "SHAPE_Area": 11.03328897241265,
+        "gdp": "125816640420.569"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 104,
+        "COUNTRY": "Iceland",
+        "ISO": "IS",
+        "COUNTRYAFF": "Iceland",
+        "AFF_ISO": "IS",
+        "SHAPE_Length": 58.777719826835586,
+        "SHAPE_Area": 19.573571011144484,
+        "gdp": "20047413006.3471"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 105,
+        "COUNTRY": "India",
+        "ISO": "IN",
+        "COUNTRYAFF": "India",
+        "AFF_ISO": "IN",
+        "SHAPE_Length": 176.50152209141302,
+        "SHAPE_Area": 278.6886247942884,
+        "gdp": "2263792499341.01"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 106,
+        "COUNTRY": "Indonesia",
+        "ISO": "ID",
+        "COUNTRYAFF": "Indonesia",
+        "AFF_ISO": "ID",
+        "SHAPE_Length": 416.2550078715501,
+        "SHAPE_Area": 153.00250903672543,
+        "gdp": "932259177765.307"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 107,
+        "COUNTRY": "Iran",
+        "ISO": "IR",
+        "COUNTRYAFF": "Iran, Islamic Republic of",
+        "AFF_ISO": "IR",
+        "SHAPE_Length": 75.77321353923432,
+        "SHAPE_Area": 161.76989341473362,
+        "gdp": "418976679728.567"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 108,
+        "COUNTRY": "Iraq",
+        "ISO": "IQ",
+        "COUNTRYAFF": "Iraq",
+        "AFF_ISO": "IQ",
+        "SHAPE_Length": 33.620014919863884,
+        "SHAPE_Area": 42.14204170004404,
+        "gdp": "171489001692.047"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 109,
+        "COUNTRY": "Ireland",
+        "ISO": "IE",
+        "COUNTRYAFF": "Ireland",
+        "AFF_ISO": "IE",
+        "SHAPE_Length": 34.82807004009646,
+        "SHAPE_Area": 9.359491416232729,
+        "gdp": "304819020500.641"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 110,
+        "COUNTRY": "Isle of Man",
+        "ISO": "IM",
+        "COUNTRYAFF": "United Kingdom",
+        "AFF_ISO": "GB",
+        "SHAPE_Length": 1.2951699395707241,
+        "SHAPE_Area": 0.08514704225819472,
+        "gdp": "6792417112.29947"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 111,
+        "COUNTRY": "Israel",
+        "ISO": "IL",
+        "COUNTRYAFF": "Israel",
+        "AFF_ISO": "IL",
+        "SHAPE_Length": 10.780802339333594,
+        "SHAPE_Area": 1.9643631158317914,
+        "gdp": "317744784695.1"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 112,
+        "COUNTRY": "Italy",
+        "ISO": "IT",
+        "COUNTRYAFF": "Italy",
+        "AFF_ISO": "IT",
+        "SHAPE_Length": 68.04430092206898,
+        "SHAPE_Area": 33.0550638295197,
+        "gdp": "1858913163927.72"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 113,
+        "COUNTRY": "Jamaica",
+        "ISO": "JM",
+        "COUNTRYAFF": "Jamaica",
+        "AFF_ISO": "JM",
+        "SHAPE_Length": 5.385819543053987,
+        "SHAPE_Area": 0.9424338339531537,
+        "gdp": "14056908749.3505"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 114,
+        "COUNTRY": "Japan",
+        "ISO": "JP",
+        "COUNTRYAFF": "Japan",
+        "AFF_ISO": "JP",
+        "SHAPE_Length": 118.05310117706632,
+        "SHAPE_Area": 37.9413075726335,
+        "gdp": "4940158776617.16"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 115,
+        "COUNTRY": "Jersey",
+        "ISO": "JE",
+        "COUNTRYAFF": "United Kingdom",
+        "AFF_ISO": "GB",
+        "SHAPE_Length": 0.5769755890902264,
+        "SHAPE_Area": 0.015394877776832584
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 116,
+        "COUNTRY": "Jordan",
+        "ISO": "JO",
+        "COUNTRYAFF": "Jordan",
+        "AFF_ISO": "JO",
+        "SHAPE_Length": 16.1779616152639,
+        "SHAPE_Area": 8.449114187573874,
+        "gdp": "38654727746.4789"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 117,
+        "COUNTRY": "Juan De Nova Island",
+        "ISO": "TF",
+        "COUNTRYAFF": "France",
+        "AFF_ISO": "FR",
+        "SHAPE_Length": 0.09250340983299514,
+        "SHAPE_Area": 0.0004870278544183011
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 118,
+        "COUNTRY": "Kazakhstan",
+        "ISO": "KZ",
+        "COUNTRYAFF": "Kazakhstan",
+        "AFF_ISO": "KZ",
+        "SHAPE_Length": 140.34774750474625,
+        "SHAPE_Area": 343.16006631770864,
+        "gdp": "137278320084.171"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 119,
+        "COUNTRY": "Kenya",
+        "ISO": "KE",
+        "COUNTRYAFF": "Kenya",
+        "AFF_ISO": "KE",
+        "SHAPE_Length": 33.6126787257929,
+        "SHAPE_Area": 47.30685213048702,
+        "gdp": "70529014778.3251"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 120,
+        "COUNTRY": "Kiribati",
+        "ISO": "KI",
+        "COUNTRYAFF": "Kiribati",
+        "AFF_ISO": "KI",
+        "SHAPE_Length": 1.6817992947788867,
+        "SHAPE_Area": 0.03435205625759631,
+        "gdp": "181551484.895269"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 121,
+        "COUNTRY": "Kuwait",
+        "ISO": "KW",
+        "COUNTRYAFF": "Kuwait",
+        "AFF_ISO": "KW",
+        "SHAPE_Length": 7.548768227416227,
+        "SHAPE_Area": 1.555085109693091,
+        "gdp": "110875579086.698"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 122,
+        "COUNTRY": "Kyrgyzstan",
+        "ISO": "KG",
+        "COUNTRYAFF": "Kyrgyzstan",
+        "AFF_ISO": "KG",
+        "SHAPE_Length": 36.75413035144194,
+        "SHAPE_Area": 21.51182829138133,
+        "gdp": "6551287937.62632"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 123,
+        "COUNTRY": "Laos",
+        "ISO": "LA",
+        "COUNTRYAFF": "Lao People's Democratic Republic",
+        "AFF_ISO": "LA",
+        "SHAPE_Length": 37.55825226745877,
+        "SHAPE_Area": 19.68037371482493,
+        "gdp": "15903329472.9904"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 124,
+        "COUNTRY": "Latvia",
+        "ISO": "LV",
+        "COUNTRYAFF": "Latvia",
+        "AFF_ISO": "LV",
+        "SHAPE_Length": 19.34280501979631,
+        "SHAPE_Area": 9.516091858978372,
+        "gdp": "27572698481.8766"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 125,
+        "COUNTRY": "Lebanon",
+        "ISO": "LB",
+        "COUNTRYAFF": "Lebanon",
+        "AFF_ISO": "LB",
+        "SHAPE_Length": 5.611568837680388,
+        "SHAPE_Area": 0.9958559187613745,
+        "gdp": "49598825982.1559"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 126,
+        "COUNTRY": "Lesotho",
+        "ISO": "LS",
+        "COUNTRYAFF": "Lesotho",
+        "AFF_ISO": "LS",
+        "SHAPE_Length": 7.0980318143688095,
+        "SHAPE_Area": 2.8415081379008336,
+        "gdp": "2291321667.48246"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 127,
+        "COUNTRY": "Liberia",
+        "ISO": "LR",
+        "COUNTRYAFF": "Liberia",
+        "AFF_ISO": "LR",
+        "SHAPE_Length": 15.17124874517208,
+        "SHAPE_Area": 7.8488468618637475,
+        "gdp": "2101000000"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 128,
+        "COUNTRY": "Libya",
+        "ISO": "LY",
+        "COUNTRYAFF": "Libya",
+        "AFF_ISO": "LY",
+        "SHAPE_Length": 57.44435093254196,
+        "SHAPE_Area": 147.347375236215,
+        "gdp": "34699395523.6073"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 129,
+        "COUNTRY": "Liechtenstein",
+        "ISO": "LI",
+        "COUNTRYAFF": "Liechtenstein",
+        "AFF_ISO": "LI",
+        "SHAPE_Length": 0.633865658935704,
+        "SHAPE_Area": 0.020920516741824935,
+        "gdp": "6289165409.55908"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 130,
+        "COUNTRY": "Lithuania",
+        "ISO": "LT",
+        "COUNTRYAFF": "Lithuania",
+        "AFF_ISO": "LT",
+        "SHAPE_Length": 17.13211412731365,
+        "SHAPE_Area": 9.202562861380722,
+        "gdp": "42738875963.3703"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 131,
+        "COUNTRY": "Luxembourg",
+        "ISO": "LU",
+        "COUNTRYAFF": "Luxembourg",
+        "AFF_ISO": "LU",
+        "SHAPE_Length": 2.6461185937823233,
+        "SHAPE_Area": 0.32209345010292517,
+        "gdp": "58631324559.4484"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 132,
+        "COUNTRY": "Madagascar",
+        "ISO": "MG",
+        "COUNTRYAFF": "Madagascar",
+        "AFF_ISO": "MG",
+        "SHAPE_Length": 45.45655143869041,
+        "SHAPE_Area": 51.07102461786082,
+        "gdp": "10001193420.1518"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 133,
+        "COUNTRY": "Madeira",
+        "ISO": "PT",
+        "COUNTRYAFF": "Portugal",
+        "AFF_ISO": "PT",
+        "SHAPE_Length": 1.2517536432789789,
+        "SHAPE_Area": 0.07442691673452996,
+        "gdp": "204836597909.466"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 134,
+        "COUNTRY": "Malawi",
+        "ISO": "MW",
+        "COUNTRYAFF": "Malawi",
+        "AFF_ISO": "MW",
+        "SHAPE_Length": 23.140237560789302,
+        "SHAPE_Area": 9.886248773005942,
+        "gdp": "5433038646.51677"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 135,
+        "COUNTRY": "Malaysia",
+        "ISO": "MY",
+        "COUNTRYAFF": "Malaysia",
+        "AFF_ISO": "MY",
+        "SHAPE_Length": 60.76676232411011,
+        "SHAPE_Area": 26.753194278069625,
+        "gdp": "296535930381.12"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 136,
+        "COUNTRY": "Maldives",
+        "ISO": "MV",
+        "COUNTRYAFF": "Maldives",
+        "AFF_ISO": "MV",
+        "SHAPE_Length": 1.1286304932239464,
+        "SHAPE_Area": 0.0027384031236768157,
+        "gdp": "4224209599.22917"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 137,
+        "COUNTRY": "Mali",
+        "ISO": "ML",
+        "COUNTRYAFF": "Mali",
+        "AFF_ISO": "ML",
+        "SHAPE_Length": 64.20451677527716,
+        "SHAPE_Area": 106.6495809269496,
+        "gdp": "14034980333.6615"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 138,
+        "COUNTRY": "Malta",
+        "ISO": "MT",
+        "COUNTRYAFF": "Malta",
+        "AFF_ISO": "MT",
+        "SHAPE_Length": 0.6801917496629772,
+        "SHAPE_Area": 0.02938643255417806,
+        "gdp": "10999047580.3881"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 139,
+        "COUNTRY": "Marshall Islands",
+        "ISO": "MH",
+        "COUNTRYAFF": "Marshall Islands",
+        "AFF_ISO": "MH",
+        "SHAPE_Length": 0.6834790157147628,
+        "SHAPE_Area": 0.0028449086090612382,
+        "gdp": "194497900"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 140,
+        "COUNTRY": "Martinique",
+        "ISO": "MQ",
+        "COUNTRYAFF": "France",
+        "AFF_ISO": "FR",
+        "SHAPE_Length": 1.379038117528176,
+        "SHAPE_Area": 0.09631414616651172
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 141,
+        "COUNTRY": "Mauritania",
+        "ISO": "MR",
+        "COUNTRYAFF": "Mauritania",
+        "AFF_ISO": "MR",
+        "SHAPE_Length": 52.308388955560964,
+        "SHAPE_Area": 89.90507687836835,
+        "gdp": "4739298730.30837"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 142,
+        "COUNTRY": "Mauritius",
+        "ISO": "MU",
+        "COUNTRYAFF": "Mauritius",
+        "AFF_ISO": "MU",
+        "SHAPE_Length": 1.995267778168207,
+        "SHAPE_Area": 0.1854482961915625,
+        "gdp": "12168437744.2644"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 143,
+        "COUNTRY": "Mayotte",
+        "ISO": "YT",
+        "COUNTRYAFF": "France",
+        "AFF_ISO": "FR",
+        "SHAPE_Length": 1.0744718705537848,
+        "SHAPE_Area": 0.03715479964598709
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 144,
+        "COUNTRY": "Mexico",
+        "ISO": "MX",
+        "COUNTRYAFF": "Mexico",
+        "AFF_ISO": "MX",
+        "SHAPE_Length": 149.33109283538607,
+        "SHAPE_Area": 174.11765958485313,
+        "gdp": "1046922702460.87"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 145,
+        "COUNTRY": "Micronesia",
+        "ISO": "FM",
+        "COUNTRYAFF": "Micronesia, Federated States of",
+        "AFF_ISO": "FM",
+        "SHAPE_Length": 1.0424212405192426,
+        "SHAPE_Area": 0.04220577505968155,
+        "gdp": "329895600"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 146,
+        "COUNTRY": "Moldova",
+        "ISO": "MD",
+        "COUNTRYAFF": "Moldova, Republic of",
+        "AFF_ISO": "MD",
+        "SHAPE_Length": 12.457246783443294,
+        "SHAPE_Area": 3.9989423876634573,
+        "gdp": "6749515654.64419"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 147,
+        "COUNTRY": "Monaco",
+        "ISO": "MC",
+        "COUNTRYAFF": "Monaco",
+        "AFF_ISO": "MC",
+        "SHAPE_Length": 0.1374125681801001,
+        "SHAPE_Area": 0.0010361886279381268,
+        "gdp": "6074884388.58937"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 148,
+        "COUNTRY": "Mongolia",
+        "ISO": "MN",
+        "COUNTRYAFF": "Mongolia",
+        "AFF_ISO": "MN",
+        "SHAPE_Length": 85.10150455255588,
+        "SHAPE_Area": 184.43204512517582,
+        "gdp": "11183458130.8083"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 149,
+        "COUNTRY": "Montenegro",
+        "ISO": "ME",
+        "COUNTRYAFF": "Montenegro",
+        "AFF_ISO": "ME",
+        "SHAPE_Length": 7.288273484784286,
+        "SHAPE_Area": 1.5180043624074036,
+        "gdp": "4374127212.38938"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 150,
+        "COUNTRY": "Montserrat",
+        "ISO": "MS",
+        "COUNTRYAFF": "United Kingdom",
+        "AFF_ISO": "GB",
+        "SHAPE_Length": 0.3788410269171586,
+        "SHAPE_Area": 0.009538789282912035
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 151,
+        "COUNTRY": "Morocco",
+        "ISO": "MA",
+        "COUNTRYAFF": "Morocco",
+        "AFF_ISO": "MA",
+        "SHAPE_Length": 56.103256606978796,
+        "SHAPE_Area": 62.46316645028593,
+        "gdp": "103606321692.582"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 152,
+        "COUNTRY": "Mozambique",
+        "ISO": "MZ",
+        "COUNTRYAFF": "Mozambique",
+        "AFF_ISO": "MZ",
+        "SHAPE_Length": 66.988924479769,
+        "SHAPE_Area": 66.97652421931515,
+        "gdp": "11014858591.8422"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 153,
+        "COUNTRY": "Myanmar",
+        "ISO": "MM",
+        "COUNTRYAFF": "Myanmar",
+        "AFF_ISO": "MM",
+        "SHAPE_Length": 87.34718885914593,
+        "SHAPE_Area": 58.12010793128922,
+        "gdp": "63225097051.255"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 154,
+        "COUNTRY": "Namibia",
+        "ISO": "NA",
+        "COUNTRYAFF": "Namibia",
+        "AFF_ISO": "NA",
+        "SHAPE_Length": 48.90282413922982,
+        "SHAPE_Area": 72.31013904571495,
+        "gdp": "10947880690.471"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 155,
+        "COUNTRY": "Nauru",
+        "ISO": "NR",
+        "COUNTRYAFF": "Nauru",
+        "AFF_ISO": "NR",
+        "SHAPE_Length": 0.1737773310293551,
+        "SHAPE_Area": 0.002206821739663173,
+        "gdp": "102060129.577055"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 156,
+        "COUNTRY": "Nepal",
+        "ISO": "NP",
+        "COUNTRYAFF": "Nepal",
+        "AFF_ISO": "NP",
+        "SHAPE_Length": 23.533266661507763,
+        "SHAPE_Area": 13.53372045346086,
+        "gdp": "21131983246.1855"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 157,
+        "COUNTRY": "Netherlands",
+        "ISO": "NL",
+        "COUNTRYAFF": "Netherlands",
+        "AFF_ISO": "NL",
+        "SHAPE_Length": 25.804231563779027,
+        "SHAPE_Area": 4.598853459271147,
+        "gdp": "777227541581.307"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 158,
+        "COUNTRY": "New Caledonia",
+        "ISO": "NC",
+        "COUNTRYAFF": "France",
+        "AFF_ISO": "FR",
+        "SHAPE_Length": 12.57187078459113,
+        "SHAPE_Area": 1.6405989786013084,
+        "gdp": "2682347064.3642"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 159,
+        "COUNTRY": "New Zealand",
+        "ISO": "NZ",
+        "COUNTRYAFF": "New Zealand",
+        "AFF_ISO": "NZ",
+        "SHAPE_Length": 80.3321209534038,
+        "SHAPE_Area": 29.174238708051284,
+        "gdp": "184969146624.47"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 160,
+        "COUNTRY": "Nicaragua",
+        "ISO": "NI",
+        "COUNTRYAFF": "Nicaragua",
+        "AFF_ISO": "NI",
+        "SHAPE_Length": 18.030674440488266,
+        "SHAPE_Area": 10.668797100759308,
+        "gdp": "13230844686.858"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 161,
+        "COUNTRY": "Niger",
+        "ISO": "NE",
+        "COUNTRYAFF": "Niger",
+        "AFF_ISO": "NE",
+        "SHAPE_Length": 50.80363722126901,
+        "SHAPE_Area": 100.63781138157096,
+        "gdp": "7528387858.34739"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 162,
+        "COUNTRY": "Nigeria",
+        "ISO": "NG",
+        "COUNTRYAFF": "Nigeria",
+        "AFF_ISO": "NG",
+        "SHAPE_Length": 48.108082151028995,
+        "SHAPE_Area": 74.88764156208907,
+        "gdp": "404652720164.859"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 163,
+        "COUNTRY": "Niue",
+        "ISO": "NU",
+        "COUNTRYAFF": "New Zealand",
+        "AFF_ISO": "NZ",
+        "SHAPE_Length": 0.5414125118495395,
+        "SHAPE_Area": 0.02141376318036504
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 164,
+        "COUNTRY": "Norfolk Island",
+        "ISO": "NF",
+        "COUNTRYAFF": "Australia",
+        "AFF_ISO": "AU",
+        "SHAPE_Length": 0.25975410860055953,
+        "SHAPE_Area": 0.004538020412095878
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 165,
+        "COUNTRY": "North Korea",
+        "ISO": "KP",
+        "COUNTRYAFF": "Korea, Democratic People's Republic of",
+        "AFF_ISO": "KP",
+        "SHAPE_Length": 27.068969198535417,
+        "SHAPE_Area": 12.918862339427749
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 166,
+        "COUNTRY": "North Macedonia",
+        "ISO": "MK",
+        "COUNTRYAFF": "North Macedonia",
+        "AFF_ISO": "MK",
+        "SHAPE_Length": 7.215511439321034,
+        "SHAPE_Area": 2.7500036338597913,
+        "gdp": "10899583154.6499"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 167,
+        "COUNTRY": "Northern Mariana Islands",
+        "ISO": "MP",
+        "COUNTRYAFF": "United States",
+        "AFF_ISO": "US",
+        "SHAPE_Length": 0.9088530278632243,
+        "SHAPE_Area": 0.01992703076129737,
+        "gdp": "1242000000"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 168,
+        "COUNTRY": "Norway",
+        "ISO": "NO",
+        "COUNTRYAFF": "Norway",
+        "AFF_ISO": "NO",
+        "SHAPE_Length": 295.01521462291385,
+        "SHAPE_Area": 59.93964341102809,
+        "gdp": "371076190476.19"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 169,
+        "COUNTRY": "Oman",
+        "ISO": "OM",
+        "COUNTRYAFF": "Oman",
+        "AFF_ISO": "OM",
+        "SHAPE_Length": 32.3352139020106,
+        "SHAPE_Area": 26.7609144790414,
+        "gdp": "66293368010.4031"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 170,
+        "COUNTRY": "Pakistan",
+        "ISO": "PK",
+        "COUNTRYAFF": "Pakistan",
+        "AFF_ISO": "PK",
+        "SHAPE_Length": 71.72979375593401,
+        "SHAPE_Area": 82.06251641618053,
+        "gdp": "278913371202.065"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 171,
+        "COUNTRY": "Palau",
+        "ISO": "PW",
+        "COUNTRYAFF": "Palau",
+        "AFF_ISO": "PW",
+        "SHAPE_Length": 1.1053233016380575,
+        "SHAPE_Area": 0.031136027748860835,
+        "gdp": "310248300"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 172,
+        "COUNTRY": "Palestinian Territory",
+        "ISO": "PS",
+        "COUNTRYAFF": "Palestine, State of",
+        "AFF_ISO": "PS",
+        "SHAPE_Length": 4.757897586726383,
+        "SHAPE_Area": 0.5949327781619279
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 173,
+        "COUNTRY": "Panama",
+        "ISO": "PA",
+        "COUNTRYAFF": "Panama",
+        "AFF_ISO": "PA",
+        "SHAPE_Length": 25.300754981141004,
+        "SHAPE_Area": 6.088301151408965,
+        "gdp": "55187700000"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 174,
+        "COUNTRY": "Papua New Guinea",
+        "ISO": "PG",
+        "COUNTRYAFF": "Papua New Guinea",
+        "AFF_ISO": "PG",
+        "SHAPE_Length": 89.29137648881918,
+        "SHAPE_Area": 37.78042076036517,
+        "gdp": "20213214171.7204"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 175,
+        "COUNTRY": "Paraguay",
+        "ISO": "PY",
+        "COUNTRYAFF": "Paraguay",
+        "AFF_ISO": "PY",
+        "SHAPE_Length": 30.891883907774215,
+        "SHAPE_Area": 35.208738514282544,
+        "gdp": "27424071382.7244"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 176,
+        "COUNTRY": "Peru",
+        "ISO": "PE",
+        "COUNTRYAFF": "Peru",
+        "AFF_ISO": "PE",
+        "SHAPE_Length": 68.28538440786713,
+        "SHAPE_Area": 106.50085776675357,
+        "gdp": "192207342004.681"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 177,
+        "COUNTRY": "Philippines",
+        "ISO": "PH",
+        "COUNTRYAFF": "Philippines",
+        "AFF_ISO": "PH",
+        "SHAPE_Length": 130.2313509491704,
+        "SHAPE_Area": 24.30019254377626,
+        "gdp": "304905406845.291"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 178,
+        "COUNTRY": "Pitcairn",
+        "ISO": "PN",
+        "COUNTRYAFF": "United Kingdom",
+        "AFF_ISO": "GB",
+        "SHAPE_Length": 0.33816713331250775,
+        "SHAPE_Area": 0.00428604298578375
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 179,
+        "COUNTRY": "Poland",
+        "ISO": "PL",
+        "COUNTRYAFF": "Poland",
+        "AFF_ISO": "PL",
+        "SHAPE_Length": 35.327835707870356,
+        "SHAPE_Area": 40.91073052181713,
+        "gdp": "471364408713.956"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 180,
+        "COUNTRY": "Portugal",
+        "ISO": "PT",
+        "COUNTRYAFF": "Portugal",
+        "AFF_ISO": "PT",
+        "SHAPE_Length": 19.45369558575302,
+        "SHAPE_Area": 9.302483692899061,
+        "gdp": "204836597909.466"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 181,
+        "COUNTRY": "Puerto Rico",
+        "ISO": "PR",
+        "COUNTRYAFF": "United States",
+        "AFF_ISO": "US",
+        "SHAPE_Length": 4.788617658983918,
+        "SHAPE_Area": 0.7813508145236997,
+        "gdp": "103134778000"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 182,
+        "COUNTRY": "Qatar",
+        "ISO": "QA",
+        "COUNTRYAFF": "Qatar",
+        "AFF_ISO": "QA",
+        "SHAPE_Length": 4.789811116642417,
+        "SHAPE_Area": 0.9948123956458558,
+        "gdp": "152451923076.923"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 183,
+        "COUNTRY": "R\u00e9union",
+        "ISO": "RE",
+        "COUNTRYAFF": "France",
+        "AFF_ISO": "FR",
+        "SHAPE_Length": 1.809501186825892,
+        "SHAPE_Area": 0.22970319598086428
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 184,
+        "COUNTRY": "Romania",
+        "ISO": "RO",
+        "COUNTRYAFF": "Romania",
+        "AFF_ISO": "RO",
+        "SHAPE_Length": 29.03629186432092,
+        "SHAPE_Area": 27.498309343580942,
+        "gdp": "187592037839.968"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 185,
+        "COUNTRY": "Russian Federation",
+        "ISO": "RU",
+        "COUNTRYAFF": "Russian Federation",
+        "AFF_ISO": "RU",
+        "SHAPE_Length": 1536.287149777923,
+        "SHAPE_Area": 2931.5260821926604,
+        "gdp": "1283162985989.3"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 186,
+        "COUNTRY": "Rwanda",
+        "ISO": "RW",
+        "COUNTRYAFF": "Rwanda",
+        "AFF_ISO": "RW",
+        "SHAPE_Length": 7.159854452953172,
+        "SHAPE_Area": 2.043382401254473,
+        "gdp": "8376048904.58291"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 187,
+        "COUNTRY": "Saba",
+        "ISO": "BQ",
+        "COUNTRYAFF": "Netherlands",
+        "AFF_ISO": "NL",
+        "SHAPE_Length": 0.13111777233277236,
+        "SHAPE_Area": 0.001203972146677422
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 188,
+        "COUNTRY": "Saint Barthelemy",
+        "ISO": "BL",
+        "COUNTRYAFF": "France",
+        "AFF_ISO": "FR",
+        "SHAPE_Length": 0.23181356608819007,
+        "SHAPE_Area": 0.001977549141182617
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 189,
+        "COUNTRY": "Saint Eustatius",
+        "ISO": "BQ",
+        "COUNTRYAFF": "Netherlands",
+        "AFF_ISO": "NL",
+        "SHAPE_Length": 0.19513182615391356,
+        "SHAPE_Area": 0.0020374893764041288
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 190,
+        "COUNTRY": "Saint Helena",
+        "ISO": "SH",
+        "COUNTRYAFF": "United Kingdom",
+        "AFF_ISO": "GB",
+        "SHAPE_Length": 0.41757673525298833,
+        "SHAPE_Area": 0.011014109269856064
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 191,
+        "COUNTRY": "Saint Kitts and Nevis",
+        "ISO": "KN",
+        "COUNTRYAFF": "Saint Kitts and Nevis",
+        "AFF_ISO": "KN",
+        "SHAPE_Length": 0.6664725829963561,
+        "SHAPE_Area": 0.016625977346961595,
+        "gdp": "909854619.518519"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 192,
+        "COUNTRY": "Saint Lucia",
+        "ISO": "LC",
+        "COUNTRYAFF": "Saint Lucia",
+        "AFF_ISO": "LC",
+        "SHAPE_Length": 0.9529876542442699,
+        "SHAPE_Area": 0.053124397991301746,
+        "gdp": "1667078703.7037"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 193,
+        "COUNTRY": "Saint Martin",
+        "ISO": "MF",
+        "COUNTRYAFF": "France",
+        "AFF_ISO": "FR",
+        "SHAPE_Length": 0.4082108176420942,
+        "SHAPE_Area": 0.004622118601132405
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 194,
+        "COUNTRY": "Saint Pierre and Miquelon",
+        "ISO": "PM",
+        "COUNTRYAFF": "France",
+        "AFF_ISO": "FR",
+        "SHAPE_Length": 1.3532495989325226,
+        "SHAPE_Area": 0.030158411693669444
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 195,
+        "COUNTRY": "Saint Vincent and the Grenadines",
+        "ISO": "VC",
+        "COUNTRYAFF": "Saint Vincent and the Grenadines",
+        "AFF_ISO": "VC",
+        "SHAPE_Length": 0.6495270057540276,
+        "SHAPE_Area": 0.028544818851250126,
+        "gdp": "768224226.666667"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 196,
+        "COUNTRY": "Samoa",
+        "ISO": "WS",
+        "COUNTRYAFF": "Samoa",
+        "AFF_ISO": "WS",
+        "SHAPE_Length": 3.0196618941936357,
+        "SHAPE_Area": 0.24551890595601855,
+        "gdp": "786356314.80277"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 197,
+        "COUNTRY": "San Marino",
+        "ISO": "SM",
+        "COUNTRYAFF": "San Marino",
+        "AFF_ISO": "SM",
+        "SHAPE_Length": 0.3151104457201521,
+        "SHAPE_Area": 0.006711122649699217,
+        "gdp": "1590707964.60177"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 198,
+        "COUNTRY": "Sao Tome and Principe",
+        "ISO": "ST",
+        "COUNTRYAFF": "S\u00e3o Tom\u00e9 and Pr\u00edncipe",
+        "AFF_ISO": "ST",
+        "SHAPE_Length": 1.5282843033124394,
+        "SHAPE_Area": 0.09279003151666387,
+        "gdp": "342781715.52048"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 199,
+        "COUNTRY": "Saudi Arabia",
+        "ISO": "SA",
+        "COUNTRYAFF": "Saudi Arabia",
+        "AFF_ISO": "SA",
+        "SHAPE_Length": 68.27670582473927,
+        "SHAPE_Area": 171.2822725069231,
+        "gdp": "646438380560"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 200,
+        "COUNTRY": "Senegal",
+        "ISO": "SN",
+        "COUNTRYAFF": "Senegal",
+        "AFF_ISO": "SN",
+        "SHAPE_Length": 31.010946782367046,
+        "SHAPE_Area": 16.42800560406539,
+        "gdp": "14683697630.9"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 201,
+        "COUNTRY": "Serbia",
+        "ISO": "RS",
+        "COUNTRYAFF": "Serbia",
+        "AFF_ISO": "RS",
+        "SHAPE_Length": 19.484992290566673,
+        "SHAPE_Area": 9.89661076759154,
+        "gdp": "38299854688.1277"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 202,
+        "COUNTRY": "Seychelles",
+        "ISO": "SC",
+        "COUNTRYAFF": "Seychelles",
+        "AFF_ISO": "SC",
+        "SHAPE_Length": 1.356726745998161,
+        "SHAPE_Area": 0.030892405641149312,
+        "gdp": "1427323889.0961"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 203,
+        "COUNTRY": "Sierra Leone",
+        "ISO": "SL",
+        "COUNTRYAFF": "Sierra Leone",
+        "AFF_ISO": "SL",
+        "SHAPE_Length": 13.809717000221642,
+        "SHAPE_Area": 5.9538363551529425,
+        "gdp": "3736588553.56394"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 204,
+        "COUNTRY": "Singapore",
+        "ISO": "SG",
+        "COUNTRYAFF": "Singapore",
+        "AFF_ISO": "SG",
+        "SHAPE_Length": 0.8581026260912413,
+        "SHAPE_Area": 0.04478797278376357,
+        "gdp": "296975678610.206"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 205,
+        "COUNTRY": "Sint Maarten",
+        "ISO": "SX",
+        "COUNTRYAFF": "Netherlands",
+        "AFF_ISO": "NL",
+        "SHAPE_Length": 0.3169271313310611,
+        "SHAPE_Area": 0.0036458157746572556
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 206,
+        "COUNTRY": "Slovakia",
+        "ISO": "SK",
+        "COUNTRYAFF": "Slovakia",
+        "AFF_ISO": "SK",
+        "SHAPE_Length": 14.309671719273009,
+        "SHAPE_Area": 5.978078003713133,
+        "gdp": "89768598023.3903"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 207,
+        "COUNTRY": "Slovenia",
+        "ISO": "SI",
+        "COUNTRYAFF": "Slovenia",
+        "AFF_ISO": "SI",
+        "SHAPE_Length": 9.952032288241787,
+        "SHAPE_Area": 2.3769920507652507,
+        "gdp": "44708598648.8562"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 208,
+        "COUNTRY": "Solomon Islands",
+        "ISO": "SB",
+        "COUNTRYAFF": "Solomon Islands",
+        "AFF_ISO": "SB",
+        "SHAPE_Length": 30.461288397921674,
+        "SHAPE_Area": 2.2188080767526257,
+        "gdp": "1202125000"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 209,
+        "COUNTRY": "Somalia",
+        "ISO": "SO",
+        "COUNTRYAFF": "Somalia",
+        "AFF_ISO": "SO",
+        "SHAPE_Length": 48.9953616048232,
+        "SHAPE_Area": 52.07040245798507,
+        "gdp": "6217000000"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 210,
+        "COUNTRY": "South Africa",
+        "ISO": "ZA",
+        "COUNTRYAFF": "South Africa",
+        "AFF_ISO": "ZA",
+        "SHAPE_Length": 68.45482532157777,
+        "SHAPE_Area": 113.1360166855849,
+        "gdp": "295456189492.005"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 211,
+        "COUNTRY": "South Georgia and South Sandwich Islands",
+        "ISO": "GS",
+        "COUNTRYAFF": "United Kingdom",
+        "AFF_ISO": "GB",
+        "SHAPE_Length": 7.3379121224105015,
+        "SHAPE_Area": 0.5154580411890193
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 212,
+        "COUNTRY": "South Korea",
+        "ISO": "KR",
+        "COUNTRYAFF": "Korea, Republic of",
+        "AFF_ISO": "KR",
+        "SHAPE_Length": 28.33326770054019,
+        "SHAPE_Area": 9.766877130319331,
+        "gdp": "1411245589976.63"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 213,
+        "COUNTRY": "South Sudan",
+        "ISO": "SS",
+        "COUNTRYAFF": "South Sudan",
+        "AFF_ISO": "SS",
+        "SHAPE_Length": 41.896201715005475,
+        "SHAPE_Area": 51.87349922752397,
+        "gdp": "9015221096.24474"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 214,
+        "COUNTRY": "Spain",
+        "ISO": "ES",
+        "COUNTRYAFF": "Spain",
+        "AFF_ISO": "ES",
+        "SHAPE_Length": 51.72495637260834,
+        "SHAPE_Area": 52.915448582397474,
+        "gdp": "1237255019653.86"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 215,
+        "COUNTRY": "Sri Lanka",
+        "ISO": "LK",
+        "COUNTRYAFF": "Sri Lanka",
+        "AFF_ISO": "LK",
+        "SHAPE_Length": 13.99841987101686,
+        "SHAPE_Area": 5.412087870066774,
+        "gdp": "81321876307.2556"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 216,
+        "COUNTRY": "Sudan",
+        "ISO": "SD",
+        "COUNTRYAFF": "Sudan",
+        "AFF_ISO": "SD",
+        "SHAPE_Length": 65.28249059399174,
+        "SHAPE_Area": 156.78177784697732,
+        "gdp": "95584380032.2061"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 217,
+        "COUNTRY": "Suriname",
+        "ISO": "SR",
+        "COUNTRYAFF": "Suriname",
+        "AFF_ISO": "SR",
+        "SHAPE_Length": 17.12661286307514,
+        "SHAPE_Area": 11.810420806726954,
+        "gdp": "3278425328.32418"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 218,
+        "COUNTRY": "Svalbard",
+        "ISO": "SJ",
+        "COUNTRYAFF": "Norway",
+        "AFF_ISO": "NO",
+        "SHAPE_Length": 148.06545160517706,
+        "SHAPE_Area": 26.043805122253506
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 219,
+        "COUNTRY": "Sweden",
+        "ISO": "SE",
+        "COUNTRYAFF": "Sweden",
+        "AFF_ISO": "SE",
+        "SHAPE_Length": 92.18592833297075,
+        "SHAPE_Area": 78.56860400733039,
+        "gdp": "514459972806.171"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 220,
+        "COUNTRY": "Switzerland",
+        "ISO": "CH",
+        "COUNTRYAFF": "Switzerland",
+        "AFF_ISO": "CH",
+        "SHAPE_Length": 15.531522624794945,
+        "SHAPE_Area": 4.8892766122431395,
+        "gdp": "668851296244.236"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 221,
+        "COUNTRY": "Syria",
+        "ISO": "SY",
+        "COUNTRYAFF": "Syrian Arab Republic",
+        "AFF_ISO": "SY",
+        "SHAPE_Length": 22.53553699349901,
+        "SHAPE_Area": 18.570605809111516,
+        "gdp": "40405006007.2086"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 222,
+        "COUNTRY": "Tajikistan",
+        "ISO": "TJ",
+        "COUNTRYAFF": "Tajikistan",
+        "AFF_ISO": "TJ",
+        "SHAPE_Length": 33.87753191411004,
+        "SHAPE_Area": 14.715859362909857,
+        "gdp": "6951657158.90093"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 223,
+        "COUNTRY": "Tanzania",
+        "ISO": "TZ",
+        "COUNTRYAFF": "Tanzania, United Republic of",
+        "AFF_ISO": "TZ",
+        "SHAPE_Length": 45.40549607120794,
+        "SHAPE_Area": 77.00877820019144
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 224,
+        "COUNTRY": "Thailand",
+        "ISO": "TH",
+        "COUNTRYAFF": "Thailand",
+        "AFF_ISO": "TH",
+        "SHAPE_Length": 65.5202806525262,
+        "SHAPE_Area": 43.14322620658552,
+        "gdp": "407026127310.434"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 225,
+        "COUNTRY": "Timor-Leste",
+        "ISO": "TL",
+        "COUNTRYAFF": "Timor-Leste",
+        "AFF_ISO": "TL",
+        "SHAPE_Length": 7.7195507859130315,
+        "SHAPE_Area": 1.2363044380182702,
+        "gdp": "1782974000"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 226,
+        "COUNTRY": "Togo",
+        "ISO": "TG",
+        "COUNTRYAFF": "Togo",
+        "AFF_ISO": "TG",
+        "SHAPE_Length": 14.02740732221107,
+        "SHAPE_Area": 4.692140065400004,
+        "gdp": "4399995986.56477"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 227,
+        "COUNTRY": "Tokelau",
+        "ISO": "TK",
+        "COUNTRYAFF": "New Zealand",
+        "AFF_ISO": "NZ",
+        "SHAPE_Length": 0.10869610373871076,
+        "SHAPE_Area": 0.0006062142479671922
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 228,
+        "COUNTRY": "Tonga",
+        "ISO": "TO",
+        "COUNTRYAFF": "Tonga",
+        "AFF_ISO": "TO",
+        "SHAPE_Length": 1.3091237878839224,
+        "SHAPE_Area": 0.04001820365350347,
+        "gdp": "401562006.229967"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 229,
+        "COUNTRY": "Trinidad and Tobago",
+        "ISO": "TT",
+        "COUNTRYAFF": "Trinidad and Tobago",
+        "AFF_ISO": "TT",
+        "SHAPE_Length": 4.384972373972369,
+        "SHAPE_Area": 0.41375270309247414,
+        "gdp": "21894706041.2353"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 230,
+        "COUNTRY": "Tunisia",
+        "ISO": "TN",
+        "COUNTRYAFF": "Tunisia",
+        "AFF_ISO": "TN",
+        "SHAPE_Length": 25.01430184457057,
+        "SHAPE_Area": 15.18893257160837,
+        "gdp": "42062549394.7859"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 231,
+        "COUNTRY": "Turkiye",
+        "ISO": "TR",
+        "COUNTRYAFF": "Turkiye",
+        "AFF_ISO": "TR",
+        "SHAPE_Length": 76.99073102976337,
+        "SHAPE_Area": 81.19932452559415,
+        "gdp": "863711710426.514"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 232,
+        "COUNTRY": "Turkmenistan",
+        "ISO": "TM",
+        "COUNTRYAFF": "Turkmenistan",
+        "AFF_ISO": "TM",
+        "SHAPE_Length": 44.80114841478618,
+        "SHAPE_Area": 57.860559610826385,
+        "gdp": "36179885714.2857"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 233,
+        "COUNTRY": "Turks and Caicos Islands",
+        "ISO": "TC",
+        "COUNTRYAFF": "United Kingdom",
+        "AFF_ISO": "GB",
+        "SHAPE_Length": 1.2019739168968993,
+        "SHAPE_Area": 0.026105068857770013
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 234,
+        "COUNTRY": "Tuvalu",
+        "ISO": "TV",
+        "COUNTRYAFF": "Tuvalu",
+        "AFF_ISO": "TV",
+        "SHAPE_Length": 0.4029728175129151,
+        "SHAPE_Area": 0.00237665111245055,
+        "gdp": "34218878.4390841"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 235,
+        "COUNTRY": "Uganda",
+        "ISO": "UG",
+        "COUNTRYAFF": "Uganda",
+        "AFF_ISO": "UG",
+        "SHAPE_Length": 21.24822772015095,
+        "SHAPE_Area": 19.676807432808843,
+        "gdp": "24078931933.4578"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 236,
+        "COUNTRY": "Ukraine",
+        "ISO": "UA",
+        "COUNTRYAFF": "Ukraine",
+        "AFF_ISO": "UA",
+        "SHAPE_Length": 79.54527030204055,
+        "SHAPE_Area": 73.48294801794574,
+        "gdp": "93270479388.5243"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 237,
+        "COUNTRY": "United Arab Emirates",
+        "ISO": "AE",
+        "COUNTRYAFF": "United Arab Emirates",
+        "AFF_ISO": "AE",
+        "SHAPE_Length": 16.75967635690191,
+        "SHAPE_Area": 6.239850177454583,
+        "gdp": "348743265704.561"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 238,
+        "COUNTRY": "United Kingdom",
+        "ISO": "GB",
+        "COUNTRYAFF": "United Kingdom",
+        "AFF_ISO": "GB",
+        "SHAPE_Length": 115.97423585183991,
+        "SHAPE_Area": 33.63045854371352,
+        "gdp": "2647898654635.24"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 239,
+        "COUNTRY": "United States",
+        "ISO": "US",
+        "COUNTRYAFF": "United States",
+        "AFF_ISO": "US",
+        "SHAPE_Length": 726.1060557084154,
+        "SHAPE_Area": 1116.670604078625,
+        "gdp": "18624475000000"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 240,
+        "COUNTRY": "United States Minor Outlying Islands",
+        "ISO": "UM",
+        "COUNTRYAFF": "United States",
+        "AFF_ISO": "US",
+        "SHAPE_Length": 0.4802163293388534,
+        "SHAPE_Area": 0.003216016346710729
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 241,
+        "COUNTRY": "Uruguay",
+        "ISO": "UY",
+        "COUNTRYAFF": "Uruguay",
+        "AFF_ISO": "UY",
+        "SHAPE_Length": 18.486971079980766,
+        "SHAPE_Area": 17.126244682665007,
+        "gdp": "52419720713.7316"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 242,
+        "COUNTRY": "US Virgin Islands",
+        "ISO": "VI",
+        "COUNTRYAFF": "United States",
+        "AFF_ISO": "US",
+        "SHAPE_Length": 1.2366278951720386,
+        "SHAPE_Area": 0.025685498687399215,
+        "gdp": "3765000000"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 243,
+        "COUNTRY": "Uzbekistan",
+        "ISO": "UZ",
+        "COUNTRYAFF": "Uzbekistan",
+        "AFF_ISO": "UZ",
+        "SHAPE_Length": 60.322068506314736,
+        "SHAPE_Area": 48.36999932236906,
+        "gdp": "67220335569.6147"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 244,
+        "COUNTRY": "Vanuatu",
+        "ISO": "VU",
+        "COUNTRYAFF": "Vanuatu",
+        "AFF_ISO": "VU",
+        "SHAPE_Length": 16.41146848354458,
+        "SHAPE_Area": 1.0371351499279247,
+        "gdp": "773502895.927602"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 245,
+        "COUNTRY": "Vatican City",
+        "ISO": "VA",
+        "COUNTRYAFF": "Holy See (Vatican City State)",
+        "AFF_ISO": "VA",
+        "SHAPE_Length": 0.03246774241702515,
+        "SHAPE_Area": 6.12216410399125e-05
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 246,
+        "COUNTRY": "Venezuela",
+        "ISO": "VE",
+        "COUNTRYAFF": "Venezuela, Bolivarian Republic of",
+        "AFF_ISO": "VE",
+        "SHAPE_Length": 76.94744750130671,
+        "SHAPE_Area": 74.62837695842956,
+        "gdp": "482359318767.703"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 247,
+        "COUNTRY": "Vietnam",
+        "ISO": "VN",
+        "COUNTRYAFF": "Viet Nam",
+        "AFF_ISO": "VN",
+        "SHAPE_Length": 66.86680246299511,
+        "SHAPE_Area": 27.556081943886156,
+        "gdp": "205276172134.901"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 248,
+        "COUNTRY": "Wallis and Futuna",
+        "ISO": "WF",
+        "COUNTRYAFF": "France",
+        "AFF_ISO": "FR",
+        "SHAPE_Length": 0.7006075523063672,
+        "SHAPE_Area": 0.01341437160995024
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 249,
+        "COUNTRY": "Yemen",
+        "ISO": "YE",
+        "COUNTRYAFF": "Yemen",
+        "AFF_ISO": "YE",
+        "SHAPE_Length": 34.01132684684684,
+        "SHAPE_Area": 38.289870716675736,
+        "gdp": "27317605346.0714"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 250,
+        "COUNTRY": "Zambia",
+        "ISO": "ZM",
+        "COUNTRYAFF": "Zambia",
+        "AFF_ISO": "ZM",
+        "SHAPE_Length": 49.14143908305838,
+        "SHAPE_Area": 62.81402195861372,
+        "gdp": "21063989682.5243"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "FID": 251,
+        "COUNTRY": "Zimbabwe",
+        "ISO": "ZW",
+        "COUNTRYAFF": "Zimbabwe",
+        "AFF_ISO": "ZW",
+        "SHAPE_Length": 26.298426243192765,
+        "SHAPE_Area": 33.46312970908284,
+        "gdp": "16619960401.9038"
+      }
+    }
+  ]
+}
