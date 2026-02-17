@@ -1,5 +1,6 @@
 import React from "react";
-import { MapContainer } from "react-leaflet";
+import { MapContainer, useMap } from "react-leaflet";
+import L from "leaflet";
 
 import Countries from "./Countries";
 import SettingsModal from "./SettingsModal";
@@ -7,25 +8,45 @@ import "./App.css";
 import usGeoJsonData from "./us_data.json";
 import worldGeoJsonData from "./country_data.json";
 
+// Helper component to access the map instance
+function MapController({ onMapReady }) {
+  const map = useMap();
+  
+  React.useEffect(() => {
+    if (onMapReady) {
+      onMapReady(map);
+    }
+  }, [map, onMapReady]);
+  
+  return null;
+}
+
 class App extends React.Component {
-  state = {
-    mapKey: Math.random(),
-    correctCountries: [],
-    incorrectCountries: [],
-    laterCorrectCountries: [],
-    revealedCountries: [],
-    correctStates: [],
-    incorrectStates: [],
-    laterCorrectStates: [],
-    revealedStates: [],
-    showSettingsModal: false,
-    showCountryName: true,
-    showCountryGdp: false,
-    darkMode: true,
-    currentMapView: "world",
-    usGeoJsonData,
-    worldGeoJsonData,
-  };
+  constructor(props) {
+    super(props);
+    this.mapInstance = null;
+    this.state = {
+      mapKey: Math.random(),
+      correctCountries: [],
+      incorrectCountries: [],
+      laterCorrectCountries: [],
+      revealedCountries: [],
+      correctStates: [],
+      incorrectStates: [],
+      laterCorrectStates: [],
+      revealedStates: [],
+      showSettingsModal: false,
+      showCountryName: true,
+      showCountryGdp: false,
+      darkMode: true,
+      currentMapView: "world",
+      usGeoJsonData,
+      worldGeoJsonData,
+      isNavigating: false,
+      currentCountryIndex: 0,
+      countrySequence: [],
+    };
+  }
 
   clearAll = () => {
     this.setState({
@@ -45,6 +66,11 @@ class App extends React.Component {
     this.setState({
       correctStates: this.state.correctStates.concat([state]),
     });
+    
+    // Trigger smooth navigation to next state after a short delay
+    setTimeout(() => {
+      this.smoothNavigateToNextCountry();
+    }, 1000);
   };
 
   addIncorrectState = (state) => {
@@ -57,6 +83,11 @@ class App extends React.Component {
     this.setState({
       laterCorrectStates: this.state.laterCorrectStates.concat([state]),
     });
+    
+    // Also trigger navigation for later correct guesses
+    setTimeout(() => {
+      this.smoothNavigateToNextCountry();
+    }, 1000);
   };
 
   addRevealedState = (state) => {
@@ -112,6 +143,11 @@ class App extends React.Component {
     this.setState({
       correctCountries: this.state.correctCountries.concat([country]),
     });
+    
+    // Trigger smooth navigation to next country after a short delay
+    setTimeout(() => {
+      this.smoothNavigateToNextCountry();
+    }, 1000);
   };
 
   addIncorrectCountry = (country) => {
@@ -124,6 +160,11 @@ class App extends React.Component {
     this.setState({
       laterCorrectCountries: this.state.laterCorrectCountries.concat([country]),
     });
+    
+    // Also trigger navigation for later correct guesses
+    setTimeout(() => {
+      this.smoothNavigateToNextCountry();
+    }, 1000);
   };
 
   addRevealedCountry = (country) => {
@@ -144,7 +185,124 @@ class App extends React.Component {
       incorrectStates: [],
       laterCorrectStates: [],
       revealedStates: [],
-    }));
+      currentCountryIndex: 0,
+      countrySequence: [],
+    }), () => {
+      // Reinitialize sequence after state update
+      this.initializeCountrySequence();
+    });
+  };
+
+  componentDidMount() {
+    this.initializeCountrySequence();
+  }
+
+  onMapReady = (mapInstance) => {
+    this.mapInstance = mapInstance;
+  };
+
+  initializeCountrySequence = () => {
+    const features = this.state.currentMapView === "world" 
+      ? this.state.worldGeoJsonData.features 
+      : this.state.usGeoJsonData.features;
+    
+    // Create a randomized sequence of all countries/states
+    const sequence = features
+      .map(feature => ({
+        name: feature.properties[this.state.currentMapView === "world" ? "COUNTRY" : "name"],
+        geometry: feature.geometry,
+        bounds: this.getFeatureBounds(feature.geometry)
+      }))
+      .sort(() => Math.random() - 0.5); // Shuffle the array
+    
+    this.setState({ countrySequence: sequence });
+  };
+
+  getFeatureBounds = (geometry) => {
+    if (geometry.type === "Polygon") {
+      const coords = geometry.coordinates[0];
+      let minLat = Infinity, maxLat = -Infinity;
+      let minLng = Infinity, maxLng = -Infinity;
+      
+      coords.forEach(([lng, lat]) => {
+        minLat = Math.min(minLat, lat);
+        maxLat = Math.max(maxLat, lat);
+        minLng = Math.min(minLng, lng);
+        maxLng = Math.max(maxLng, lng);
+      });
+      
+      return [[minLat, minLng], [maxLat, maxLng]];
+    } else if (geometry.type === "MultiPolygon") {
+      let minLat = Infinity, maxLat = -Infinity;
+      let minLng = Infinity, maxLng = -Infinity;
+      
+      geometry.coordinates.forEach(polygon => {
+        polygon[0].forEach(([lng, lat]) => {
+          minLat = Math.min(minLat, lat);
+          maxLat = Math.max(maxLat, lat);
+          minLng = Math.min(minLng, lng);
+          maxLng = Math.max(maxLng, lng);
+        });
+      });
+      
+      return [[minLat, minLng], [maxLat, maxLng]];
+    }
+    return null;
+  };
+
+  smoothNavigateToNextCountry = () => {
+    if (this.state.isNavigating) return;
+    
+    const nextIndex = this.state.currentCountryIndex + 1;
+    if (nextIndex >= this.state.countrySequence.length) {
+      // All countries completed
+      return;
+    }
+
+    const nextCountry = this.state.countrySequence[nextIndex];
+    if (!nextCountry || !this.mapInstance) return;
+
+    this.setState({ isNavigating: true });
+
+    const map = this.mapInstance;
+    
+    // Step 1: Smooth zoom out
+    const zoomOutLevel = this.state.currentMapView === "world" ? 2 : 3;
+    
+    map.flyTo(map.getCenter(), zoomOutLevel, {
+      duration: 1.2,
+      easeLinearity: 0.5
+    });
+
+    // Step 2: After zoom out, pan to next country
+    setTimeout(() => {
+      const bounds = L.latLngBounds(nextCountry.bounds);
+      const center = bounds.getCenter();
+      
+      map.flyTo(center, zoomOutLevel, {
+        duration: 1.5,
+        easeLinearity: 0.3
+      });
+
+      // Step 3: After pan, zoom in on the country
+      setTimeout(() => {
+        const zoomInLevel = this.state.currentMapView === "world" ? 4 : 6;
+        map.flyToBounds(bounds, {
+          duration: 1.3,
+          padding: [20, 20],
+          maxZoom: zoomInLevel,
+          easeLinearity: 0.25
+        });
+
+        // Navigation complete
+        setTimeout(() => {
+          this.setState({ 
+            isNavigating: false,
+            currentCountryIndex: nextIndex 
+          });
+        }, 1400);
+      }, 1600);
+    }, 1300);
   };
 
   render() {
@@ -202,6 +360,7 @@ class App extends React.Component {
               backgroundColor: darkMode ? "black" : "white",
             }}
           >
+            <MapController onMapReady={this.onMapReady} />
             <div className={darkMode ? "country-count" : "country-count light"}>
               {" "}
               {this.state.currentMapView === "world"
