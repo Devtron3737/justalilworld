@@ -59,18 +59,29 @@ class App extends React.Component {
       incorrectStates: [],
       laterCorrectStates: [],
       revealedStates: [],
+      currentCountryIndex: 0,
+      isNavigating: false,
+    }, () => {
+      // Reinitialize and auto-select first country after clearing
+      this.initializeCountrySequence();
+      setTimeout(() => {
+        this.autoSelectFirstCountry();
+      }, 500);
     });
   };
 
   addCorrectState = (state) => {
     this.setState({
       correctStates: this.state.correctStates.concat([state]),
+    }, () => {
+      // Reinitialize sequence to exclude the guessed state
+      this.initializeCountrySequence();
+      
+      // Trigger smooth navigation to next state after a short delay
+      setTimeout(() => {
+        this.smoothNavigateToNextCountry();
+      }, 500);
     });
-    
-    // Trigger smooth navigation to next state after a short delay
-    setTimeout(() => {
-      this.smoothNavigateToNextCountry();
-    }, 500);
   };
 
   addIncorrectState = (state) => {
@@ -82,17 +93,23 @@ class App extends React.Component {
   addLaterCorrectState = (state) => {
     this.setState({
       laterCorrectStates: this.state.laterCorrectStates.concat([state]),
+    }, () => {
+      // Reinitialize sequence to exclude the guessed state
+      this.initializeCountrySequence();
+      
+      // Also trigger navigation for later correct guesses
+      setTimeout(() => {
+        this.smoothNavigateToNextCountry();
+      }, 500);
     });
-    
-    // Also trigger navigation for later correct guesses
-    setTimeout(() => {
-      this.smoothNavigateToNextCountry();
-    }, 500);
   };
 
   addRevealedState = (state) => {
     this.setState({
       revealedStates: this.state.revealedStates.concat([state]),
+    }, () => {
+      // Reinitialize sequence to exclude the revealed state
+      this.initializeCountrySequence();
     });
   };
 
@@ -142,12 +159,15 @@ class App extends React.Component {
   addCorrectCountry = (country) => {
     this.setState({
       correctCountries: this.state.correctCountries.concat([country]),
+    }, () => {
+      // Reinitialize sequence to exclude the guessed country
+      this.initializeCountrySequence();
+      
+      // Trigger smooth navigation to next country after a short delay
+      setTimeout(() => {
+        this.smoothNavigateToNextCountry();
+      }, 500);
     });
-    
-    // Trigger smooth navigation to next country after a short delay
-    setTimeout(() => {
-      this.smoothNavigateToNextCountry();
-    }, 500);
   };
 
   addIncorrectCountry = (country) => {
@@ -159,17 +179,23 @@ class App extends React.Component {
   addLaterCorrectCountry = (country) => {
     this.setState({
       laterCorrectCountries: this.state.laterCorrectCountries.concat([country]),
+    }, () => {
+      // Reinitialize sequence to exclude the guessed country
+      this.initializeCountrySequence();
+      
+      // Also trigger navigation for later correct guesses
+      setTimeout(() => {
+        this.smoothNavigateToNextCountry();
+      }, 500);
     });
-    
-    // Also trigger navigation for later correct guesses
-    setTimeout(() => {
-      this.smoothNavigateToNextCountry();
-    }, 500);
   };
 
   addRevealedCountry = (country) => {
     this.setState({
       revealedCountries: this.state.revealedCountries.concat([country]),
+    }, () => {
+      // Reinitialize sequence to exclude the revealed country
+      this.initializeCountrySequence();
     });
   };
 
@@ -262,7 +288,24 @@ class App extends React.Component {
       : this.state.usGeoJsonData.features;
     
     // Create a randomized sequence of all countries/states
+    // Filter out countries that have already been guessed correctly or revealed
+    const correctItems = this.state.currentMapView === "world" 
+      ? this.state.correctCountries 
+      : this.state.correctStates;
+    const laterCorrectItems = this.state.currentMapView === "world"
+      ? this.state.laterCorrectCountries
+      : this.state.laterCorrectStates;
+    const revealedItems = this.state.currentMapView === "world"
+      ? this.state.revealedCountries
+      : this.state.revealedStates;
+    
+    const allGuessedItems = [...correctItems, ...laterCorrectItems, ...revealedItems];
+    
     const sequence = features
+      .filter(feature => {
+        const name = feature.properties[this.state.currentMapView === "world" ? "COUNTRY" : "name"];
+        return !allGuessedItems.includes(name);
+      })
       .map(feature => ({
         name: feature.properties[this.state.currentMapView === "world" ? "COUNTRY" : "name"],
         geometry: feature.geometry,
@@ -270,7 +313,8 @@ class App extends React.Component {
       }))
       .sort(() => Math.random() - 0.5); // Shuffle the array
     
-    this.setState({ countrySequence: sequence });
+    console.log('Initialized country sequence:', sequence.length, 'remaining countries');
+    this.setState({ countrySequence: sequence, currentCountryIndex: 0 });
   };
 
   getFeatureBounds = (geometry) => {

@@ -11,12 +11,12 @@ class Countries extends React.Component {
   handleGlobalKeyDown = (e) => {
     if (!this.currentPopupLayer) return;
 
-    if (e.key.toLowerCase() === 's') {
+    if (e.shiftKey && e.key.toLowerCase() === 's') {
       e.preventDefault();
       if (this.currentRevealButton) {
         this.currentRevealButton.click();
       }
-    } else if (e.key.toLowerCase() === 'h') {
+    } else if (e.shiftKey && e.key.toLowerCase() === 'h') {
       e.preventDefault();
       if (this.currentHintButton) {
         this.currentHintButton.click();
@@ -29,26 +29,46 @@ class Countries extends React.Component {
     this.setupClickHandler(feature, layer);
 
     const wrapperDiv = document.createElement("div");
-    wrapperDiv.classList.add("popup-wrapper");
+    wrapperDiv.classList.add("popup-wrapper", "mobile-popup");
 
     if (!this.props.darkMode) {
       wrapperDiv.classList.add("light");
     }
 
     const input = this.createInput(feature, layer);
-    input.classList.add("country-input");
+    input.classList.add("country-input", "mobile-input");
     input.setAttribute("autocomplete", "off"); // disable 1password
+    input.setAttribute("placeholder", "your guess");
 
     if (!this.props.darkMode) {
       input.classList.add("light");
     }
 
+    // Create help button
+    const helpButton = document.createElement("button");
+    helpButton.innerHTML = "?";
+    helpButton.classList.add("help-button");
+    if (!this.props.darkMode) {
+      helpButton.classList.add("light");
+    }
+    
+    helpButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      this.showHelpModal();
+    });
+
+    // Create hidden reveal and hint buttons for programmatic access
     const revealButton = this.createRevealButton(feature, layer, input);
     const hintButton = this.createHintButton(feature, input);
+    
+    // Hide the buttons but keep them for keyboard shortcuts
+    revealButton.style.display = 'none';
+    hintButton.style.display = 'none';
 
     wrapperDiv.appendChild(input);
-    wrapperDiv.appendChild(hintButton);
+    wrapperDiv.appendChild(helpButton);
     wrapperDiv.appendChild(revealButton);
+    wrapperDiv.appendChild(hintButton);
 
     layer.bindPopup(wrapperDiv);
 
@@ -365,6 +385,45 @@ class Countries extends React.Component {
 
     return hintButton;
   }
+
+  showHelpModal = () => {
+    // Create help modal
+    const modal = document.createElement('div');
+    modal.classList.add('help-modal');
+    if (!this.props.darkMode) {
+      modal.classList.add('light');
+    }
+    
+    modal.innerHTML = `
+      <div class="help-modal-content ${!this.props.darkMode ? 'light' : ''}">
+        <h3>Keyboard Shortcuts</h3>
+        <div class="shortcut-item">
+          <strong>Enter</strong> - Submit your guess
+        </div>
+        <div class="shortcut-item">
+          <strong>Shift + S</strong> - Skip/reveal answer
+        </div>
+        <div class="shortcut-item">
+          <strong>Shift + H</strong> - Get first letter hint
+        </div>
+        <button class="close-help" ${!this.props.darkMode ? 'style="background: white; color: black;"' : ''}>Close</button>
+      </div>
+    `;
+    
+    // Add click handler to close
+    modal.querySelector('.close-help').addEventListener('click', () => {
+      document.body.removeChild(modal);
+    });
+    
+    // Close on background click
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        document.body.removeChild(modal);
+      }
+    });
+    
+    document.body.appendChild(modal);
+  };
 
   componentWillUnmount() {
     // Clean up any remaining event listeners
