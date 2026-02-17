@@ -70,7 +70,7 @@ class App extends React.Component {
     // Trigger smooth navigation to next state after a short delay
     setTimeout(() => {
       this.smoothNavigateToNextCountry();
-    }, 1000);
+    }, 500);
   };
 
   addIncorrectState = (state) => {
@@ -87,7 +87,7 @@ class App extends React.Component {
     // Also trigger navigation for later correct guesses
     setTimeout(() => {
       this.smoothNavigateToNextCountry();
-    }, 1000);
+    }, 500);
   };
 
   addRevealedState = (state) => {
@@ -147,7 +147,7 @@ class App extends React.Component {
     // Trigger smooth navigation to next country after a short delay
     setTimeout(() => {
       this.smoothNavigateToNextCountry();
-    }, 1000);
+    }, 500);
   };
 
   addIncorrectCountry = (country) => {
@@ -164,7 +164,7 @@ class App extends React.Component {
     // Also trigger navigation for later correct guesses
     setTimeout(() => {
       this.smoothNavigateToNextCountry();
-    }, 1000);
+    }, 500);
   };
 
   addRevealedCountry = (country) => {
@@ -199,6 +199,24 @@ class App extends React.Component {
 
   onMapReady = (mapInstance) => {
     this.mapInstance = mapInstance;
+  };
+
+  openCurrentCountryPopup = () => {
+    // Find and open the popup for the current country
+    const currentCountry = this.state.countrySequence[this.state.currentCountryIndex];
+    if (!currentCountry) return;
+
+    // Use a timeout to ensure the map has finished animating
+    setTimeout(() => {
+      this.mapInstance.eachLayer((layer) => {
+        if (layer.feature && 
+            layer.feature.properties[this.state.currentMapView === "world" ? "COUNTRY" : "name"] === currentCountry.name) {
+          if (layer.openPopup) {
+            layer.openPopup();
+          }
+        }
+      });
+    }, 200);
   };
 
   initializeCountrySequence = () => {
@@ -266,43 +284,46 @@ class App extends React.Component {
 
     const map = this.mapInstance;
     
-    // Step 1: Smooth zoom out
+    // Step 1: Smooth zoom out (faster)
     const zoomOutLevel = this.state.currentMapView === "world" ? 2 : 3;
     
     map.flyTo(map.getCenter(), zoomOutLevel, {
-      duration: 1.2,
+      duration: 0.7,
       easeLinearity: 0.5
     });
 
-    // Step 2: After zoom out, pan to next country
+    // Step 2: After zoom out, pan to next country (faster)
     setTimeout(() => {
       const bounds = L.latLngBounds(nextCountry.bounds);
       const center = bounds.getCenter();
       
       map.flyTo(center, zoomOutLevel, {
-        duration: 1.5,
+        duration: 0.8,
         easeLinearity: 0.3
       });
 
-      // Step 3: After pan, zoom in on the country
+      // Step 3: After pan, zoom in on the country (faster)
       setTimeout(() => {
         const zoomInLevel = this.state.currentMapView === "world" ? 4 : 6;
         map.flyToBounds(bounds, {
-          duration: 1.3,
+          duration: 0.8,
           padding: [20, 20],
           maxZoom: zoomInLevel,
           easeLinearity: 0.25
         });
 
-        // Navigation complete
+        // Navigation complete - auto-open popup
         setTimeout(() => {
           this.setState({ 
             isNavigating: false,
             currentCountryIndex: nextIndex 
           });
-        }, 1400);
-      }, 1600);
-    }, 1300);
+          
+          // Auto-open popup for the new country
+          this.openCurrentCountryPopup();
+        }, 850);
+      }, 900);
+    }, 750);
   };
 
   render() {
@@ -426,6 +447,9 @@ class App extends React.Component {
                 this.state.currentMapView === "world" ? "COUNTRY" : "name"
               }
               totalItems={this.state.currentMapView === "world" ? 195 : 50}
+              currentCountry={
+                this.state.countrySequence[this.state.currentCountryIndex]?.name
+              }
             />
           </MapContainer>
         </div>

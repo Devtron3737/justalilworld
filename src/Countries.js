@@ -45,7 +45,12 @@ class Countries extends React.Component {
           !this.props.correctItems.includes(featureName) &&
           !this.props.revealedItems.includes(featureName)
         ) {
-          this.setDefaultFeatureStyle(layer);
+          // Check if it's the current country before applying default style
+          if (this.props.currentCountry === featureName) {
+            this.setCurrentCountryStyle(layer);
+          } else {
+            this.setDefaultFeatureStyle(layer);
+          }
         }
         this.focusedLayer = null;
       }
@@ -71,14 +76,21 @@ class Countries extends React.Component {
     });
   };
 
+  setCurrentCountryStyle = (layer) => {
+    layer.setStyle({
+      color: "#FFD700", // Gold/yellow color
+      fillColor: "rgba(255, 215, 0, 0.3)", // Light gold fill
+      fillOpacity: 0.5,
+      weight: 3
+    });
+  };
+
   setupInitialFeatureStyle(feature, layer) {
     const featureName = feature.properties[this.props.nameProperty];
 
     // need the setTimeout to ensure leaflect has initialized the tile and react has re-rendered
     setTimeout(() => {
-      if (this.props.correctItems.length === 0) {
-        this.setDefaultFeatureStyle(layer);
-      } else if (this.props.correctItems.includes(featureName)) {
+      if (this.props.correctItems.includes(featureName)) {
         if (this.props.incorrectItems.includes(featureName)) {
           this.setFeatureLaterCorrectStyle(layer, featureName);
         } else {
@@ -86,6 +98,8 @@ class Countries extends React.Component {
         }
       } else if (this.props.incorrectItems.includes(featureName)) {
         this.setFeatureIncorrectStyle(layer, featureName);
+      } else if (this.props.currentCountry === featureName) {
+        this.setCurrentCountryStyle(layer);
       } else {
         this.setDefaultFeatureStyle(layer);
       }
@@ -103,7 +117,12 @@ class Countries extends React.Component {
           !this.props.correctItems.includes(focusedLayerFeatureName) &&
           !this.props.revealedItems.includes(focusedLayerFeatureName)
         ) {
-          this.setDefaultFeatureStyle(this.focusedLayer);
+          // Check if it's the current country before applying default style
+          if (this.props.currentCountry === focusedLayerFeatureName) {
+            this.setCurrentCountryStyle(this.focusedLayer);
+          } else {
+            this.setDefaultFeatureStyle(this.focusedLayer);
+          }
         }
       }
 
@@ -239,19 +258,23 @@ class Countries extends React.Component {
         // add the feature to state and turn it green
         this.props.addCorrectItem(featureName);
         this.setFeatureCorrectStyle(layer, featureName);
+        // Auto-close popup immediately for correct guesses
+        layer.closePopup();
       } else if (this.isCorrectLaterGuess(e, featureName)) {
         // they got it wrong at first, but got it right later
         // add the feature to "later guess" state and turn it orange
         this.props.addLaterCorrectItem(featureName);
         this.setFeatureLaterCorrectStyle(layer, featureName);
+        // Auto-close popup immediately for correct guesses
+        layer.closePopup();
       } else {
         // they got it wrong
         // add the feature to state and turn it red
         this.props.addIncorrectItem(featureName);
         this.setFeatureIncorrectStyle(layer, featureName);
+        // Keep popup open for incorrect guesses
+        layer.closePopup();
       }
-
-      layer.closePopup();
     });
 
     return input;
@@ -279,9 +302,9 @@ class Countries extends React.Component {
       }
       this.props.addRevealedItem(featureName);
 
-      // set the input value to the feature name
+      // set the input value to the feature name and close popup
       input.value = featureName;
-      input.focus();
+      layer.closePopup();
     });
 
     return revealButton;
