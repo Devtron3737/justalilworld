@@ -3,6 +3,26 @@ import { GeoJSON } from "react-leaflet";
 
 class Countries extends React.Component {
   focusedLayer = null;
+  currentPopupLayer = null;
+  currentPopupInput = null;
+  currentRevealButton = null;
+  currentHintButton = null;
+
+  handleGlobalKeyDown = (e) => {
+    if (!this.currentPopupLayer) return;
+
+    if (e.key.toLowerCase() === 's') {
+      e.preventDefault();
+      if (this.currentRevealButton) {
+        this.currentRevealButton.click();
+      }
+    } else if (e.key.toLowerCase() === 'h') {
+      e.preventDefault();
+      if (this.currentHintButton) {
+        this.currentHintButton.click();
+      }
+    }
+  };
 
   onEachFeature = (feature, layer) => {
     this.setupInitialFeatureStyle(feature, layer);
@@ -32,13 +52,28 @@ class Countries extends React.Component {
 
     layer.bindPopup(wrapperDiv);
 
-    // if the popup is open, focus the input
+    // if the popup is open, focus the input and add keyboard shortcuts
     layer.on("popupopen", () => {
       input.focus();
+      
+      // Add global keyboard shortcuts when popup is open
+      this.currentPopupLayer = layer;
+      this.currentPopupInput = input;
+      this.currentRevealButton = wrapperDiv.querySelector('.reveal-button:not(.hint-button)');
+      this.currentHintButton = wrapperDiv.querySelector('.hint-button');
+      
+      document.addEventListener('keydown', this.handleGlobalKeyDown);
     });
 
     layer.on("popupclose", () => {
       const featureName = feature.properties[this.props.nameProperty];
+
+      // Clean up global keyboard listeners
+      document.removeEventListener('keydown', this.handleGlobalKeyDown);
+      this.currentPopupLayer = null;
+      this.currentPopupInput = null;
+      this.currentRevealButton = null;
+      this.currentHintButton = null;
 
       if (this.focusedLayer === layer) {
         if (
@@ -78,10 +113,10 @@ class Countries extends React.Component {
 
   setCurrentCountryStyle = (layer) => {
     layer.setStyle({
-      color: "#FFD700", // Gold/yellow color
-      fillColor: "rgba(255, 215, 0, 0.3)", // Light gold fill
-      fillOpacity: 0.5,
-      weight: 3
+      color: "#FFD700", // Gold/yellow border
+      fillColor: "#FFD700", // Full yellow fill
+      fillOpacity: 0.8, // More opaque
+      weight: 2
     });
   };
 
@@ -238,7 +273,7 @@ class Countries extends React.Component {
 
     // check whether the feature id correct or not when enter is pressed
     input.addEventListener("keyup", (e) => {
-      // return unless enter is pressed
+      // return unless enter is pressed (s and h are now handled globally)
       if (e.keyCode !== 13) return;
 
       const featureName = feature.properties[this.props.nameProperty];
@@ -329,6 +364,11 @@ class Countries extends React.Component {
     });
 
     return hintButton;
+  }
+
+  componentWillUnmount() {
+    // Clean up any remaining event listeners
+    document.removeEventListener('keydown', this.handleGlobalKeyDown);
   }
 
   render() {

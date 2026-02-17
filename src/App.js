@@ -195,7 +195,44 @@ class App extends React.Component {
 
   componentDidMount() {
     this.initializeCountrySequence();
+    
+    // Auto-select first country after a short delay
+    setTimeout(() => {
+      this.autoSelectFirstCountry();
+    }, 1500);
   }
+
+  autoSelectFirstCountry = () => {
+    if (this.state.countrySequence.length > 0 && this.mapInstance && this.state.currentCountryIndex === 0) {
+      // For the very first country, we don't increment - we go to index 0
+      const firstCountry = this.state.countrySequence[0];
+      if (!firstCountry || this.state.isNavigating) return;
+
+      this.setState({ isNavigating: true });
+
+      const map = this.mapInstance;
+      const bounds = L.latLngBounds(firstCountry.bounds);
+      
+      // Just zoom to the first country (no need for zoom out/in sequence)
+      map.flyToBounds(bounds, {
+        duration: 0.8,
+        padding: [20, 20],
+        maxZoom: this.state.currentMapView === "world" ? 4 : 6,
+        easeLinearity: 0.25
+      });
+
+      // Auto-open popup after navigation
+      setTimeout(() => {
+        this.setState({ 
+          isNavigating: false,
+          currentCountryIndex: 0 
+        });
+        
+        // Auto-open popup for the first country
+        this.openCurrentCountryPopup();
+      }, 850);
+    }
+  };
 
   onMapReady = (mapInstance) => {
     this.mapInstance = mapInstance;
@@ -284,29 +321,29 @@ class App extends React.Component {
 
     const map = this.mapInstance;
     
-    // Step 1: Smooth zoom out (faster)
+    // Step 1: Smooth zoom out (30% faster)
     const zoomOutLevel = this.state.currentMapView === "world" ? 2 : 3;
     
     map.flyTo(map.getCenter(), zoomOutLevel, {
-      duration: 0.7,
+      duration: 0.5,
       easeLinearity: 0.5
     });
 
-    // Step 2: After zoom out, pan to next country (faster)
+    // Step 2: After zoom out, pan to next country (30% faster)
     setTimeout(() => {
       const bounds = L.latLngBounds(nextCountry.bounds);
       const center = bounds.getCenter();
       
       map.flyTo(center, zoomOutLevel, {
-        duration: 0.8,
+        duration: 0.6,
         easeLinearity: 0.3
       });
 
-      // Step 3: After pan, zoom in on the country (faster)
+      // Step 3: After pan, zoom in on the country (30% faster)
       setTimeout(() => {
         const zoomInLevel = this.state.currentMapView === "world" ? 4 : 6;
         map.flyToBounds(bounds, {
-          duration: 0.8,
+          duration: 0.6,
           padding: [20, 20],
           maxZoom: zoomInLevel,
           easeLinearity: 0.25
@@ -321,9 +358,9 @@ class App extends React.Component {
           
           // Auto-open popup for the new country
           this.openCurrentCountryPopup();
-        }, 850);
-      }, 900);
-    }, 750);
+        }, 620);
+      }, 640);
+    }, 520);
   };
 
   render() {
