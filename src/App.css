@@ -59,3 +59,146 @@
 .map-toggle-button.light:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
+
+/* Mobile-friendly popup styles */
+.mobile-popup {
+  padding: 8px !important;
+  max-width: 280px !important;
+  border-radius: 8px !important;
+}
+
+.mobile-input {
+  width: 200px !important;
+  padding: 10px 12px !important;
+  border: 2px solid #ccc !important;
+  border-radius: 6px !important;
+  font-size: 16px !important;
+  margin-right: 8px !important;
+}
+
+.mobile-input.light {
+  background-color: white !important;
+  color: black !important;
+  border-color: #999 !important;
+}
+
+.mobile-input:focus {
+  outline: none !important;
+  border-color: #007bff !important;
+}
+
+.help-button {
+  width: 28px !important;
+  height: 38px !important;
+  border: 2px solid #007bff !important;
+  border-radius: 6px !important;
+  background-color: #007bff !important;
+  color: white !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.help-button.light {
+  border-color: #0056b3 !important;
+  background-color: #0056b3 !important;
+}
+
+.help-button:hover {
+  background-color: #0056b3 !important;
+}
+
+/* Help modal styles */
+.help-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.help-modal-content {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 320px;
+  width: 90%;
+  text-align: center;
+}
+
+.help-modal-content.light {
+  background-color: white;
+  color: black;
+  border: 1px solid #ccc;
+}
+
+.help-modal-content h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.shortcut-item {
+  padding: 8px 0;
+  border-bottom: 1px solid #555;
+  text-align: left;
+}
+
+.help-modal-content.light .shortcut-item {
+  border-bottom-color: #ddd;
+}
+
+.shortcut-item:last-of-type {
+  border-bottom: none;
+}
+
+.shortcut-item strong {
+  display: inline-block;
+  width: 120px;
+  color: #007bff;
+}
+
+.help-modal-content.light .shortcut-item strong {
+  color: #0056b3;
+}
+
+.close-help {
+  margin-top: 15px;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.close-help:hover {
+  background-color: #0056b3;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .mobile-popup {
+    max-width: 260px !important;
+  }
+  
+  .mobile-input {
+    width: 180px !important;
+    font-size: 16px !important; /* Prevent zoom on iOS */
+  }
+  
+  .help-modal-content {
+    max-width: 280px;
+    padding: 15px;
+  }
+}

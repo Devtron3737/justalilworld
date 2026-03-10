@@ -3,49 +3,109 @@ import { GeoJSON } from "react-leaflet";
 
 class Countries extends React.Component {
   focusedLayer = null;
+  currentPopupLayer = null;
+  currentPopupInput = null;
+  currentRevealButton = null;
+  currentHintButton = null;
+
+  handleGlobalKeyDown = (e) => {
+    if (!this.currentPopupLayer) return;
+
+    if (e.shiftKey && e.key.toLowerCase() === 's') {
+      e.preventDefault();
+      if (this.currentRevealButton) {
+        this.currentRevealButton.click();
+      }
+    } else if (e.shiftKey && e.key.toLowerCase() === 'h') {
+      e.preventDefault();
+      if (this.currentHintButton) {
+        this.currentHintButton.click();
+      }
+    }
+  };
 
   onEachFeature = (feature, layer) => {
     this.setupInitialFeatureStyle(feature, layer);
     this.setupClickHandler(feature, layer);
 
     const wrapperDiv = document.createElement("div");
-    wrapperDiv.classList.add("popup-wrapper");
+    wrapperDiv.classList.add("popup-wrapper", "mobile-popup");
 
     if (!this.props.darkMode) {
       wrapperDiv.classList.add("light");
     }
 
     const input = this.createInput(feature, layer);
-    input.classList.add("country-input");
+    input.classList.add("country-input", "mobile-input");
     input.setAttribute("autocomplete", "off"); // disable 1password
+    input.setAttribute("placeholder", "your guess");
 
     if (!this.props.darkMode) {
       input.classList.add("light");
     }
 
+    // Create help button
+    const helpButton = document.createElement("button");
+    helpButton.innerHTML = "?";
+    helpButton.classList.add("help-button");
+    if (!this.props.darkMode) {
+      helpButton.classList.add("light");
+    }
+    
+    helpButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      this.showHelpModal();
+    });
+
+    // Create hidden reveal and hint buttons for programmatic access
     const revealButton = this.createRevealButton(feature, layer, input);
     const hintButton = this.createHintButton(feature, input);
+    
+    // Hide the buttons but keep them for keyboard shortcuts
+    revealButton.style.display = 'none';
+    hintButton.style.display = 'none';
 
     wrapperDiv.appendChild(input);
-    wrapperDiv.appendChild(hintButton);
+    wrapperDiv.appendChild(helpButton);
     wrapperDiv.appendChild(revealButton);
+    wrapperDiv.appendChild(hintButton);
 
     layer.bindPopup(wrapperDiv);
 
-    // if the popup is open, focus the input
+    // if the popup is open, focus the input and add keyboard shortcuts
     layer.on("popupopen", () => {
       input.focus();
+      
+      // Add global keyboard shortcuts when popup is open
+      this.currentPopupLayer = layer;
+      this.currentPopupInput = input;
+      this.currentRevealButton = wrapperDiv.querySelector('.reveal-button:not(.hint-button)');
+      this.currentHintButton = wrapperDiv.querySelector('.hint-button');
+      
+      document.addEventListener('keydown', this.handleGlobalKeyDown);
     });
 
     layer.on("popupclose", () => {
       const featureName = feature.properties[this.props.nameProperty];
+
+      // Clean up global keyboard listeners
+      document.removeEventListener('keydown', this.handleGlobalKeyDown);
+      this.currentPopupLayer = null;
+      this.currentPopupInput = null;
+      this.currentRevealButton = null;
+      this.currentHintButton = null;
 
       if (this.focusedLayer === layer) {
         if (
           !this.props.correctItems.includes(featureName) &&
           !this.props.revealedItems.includes(featureName)
         ) {
-          this.setDefaultFeatureStyle(layer);
+          // Check if it's the current country before applying default style
+          if (this.props.currentCountry === featureName) {
+            this.setCurrentCountryStyle(layer);
+          } else {
+            this.setDefaultFeatureStyle(layer);
+          }
         }
         this.focusedLayer = null;
       }
@@ -71,14 +131,21 @@ class Countries extends React.Component {
     });
   };
 
+  setCurrentCountryStyle = (layer) => {
+    layer.setStyle({
+      color: "#FFD700", // Gold/yellow border
+      fillColor: "#FFD700", // Full yellow fill
+      fillOpacity: 0.8, // More opaque
+      weight: 2
+    });
+  };
+
   setupInitialFeatureStyle(feature, layer) {
     const featureName = feature.properties[this.props.nameProperty];
 
     // need the setTimeout to ensure leaflect has initialized the tile and react has re-rendered
     setTimeout(() => {
-      if (this.props.correctItems.length === 0) {
-        this.setDefaultFeatureStyle(layer);
-      } else if (this.props.correctItems.includes(featureName)) {
+      if (this.props.correctItems.includes(featureName)) {
         if (this.props.incorrectItems.includes(featureName)) {
           this.setFeatureLaterCorrectStyle(layer, featureName);
         } else {
@@ -86,6 +153,8 @@ class Countries extends React.Component {
         }
       } else if (this.props.incorrectItems.includes(featureName)) {
         this.setFeatureIncorrectStyle(layer, featureName);
+      } else if (this.props.currentCountry === featureName) {
+        this.setCurrentCountryStyle(layer);
       } else {
         this.setDefaultFeatureStyle(layer);
       }
@@ -103,7 +172,12 @@ class Countries extends React.Component {
           !this.props.correctItems.includes(focusedLayerFeatureName) &&
           !this.props.revealedItems.includes(focusedLayerFeatureName)
         ) {
-          this.setDefaultFeatureStyle(this.focusedLayer);
+          // Check if it's the current country before applying default style
+          if (this.props.currentCountry === focusedLayerFeatureName) {
+            this.setCurrentCountryStyle(this.focusedLayer);
+          } else {
+            this.setDefaultFeatureStyle(this.focusedLayer);
+          }
         }
       }
 
@@ -219,7 +293,7 @@ class Countries extends React.Component {
 
     // check whether the feature id correct or not when enter is pressed
     input.addEventListener("keyup", (e) => {
-      // return unless enter is pressed
+      // return unless enter is pressed (s and h are now handled globally)
       if (e.keyCode !== 13) return;
 
       const featureName = feature.properties[this.props.nameProperty];
@@ -239,19 +313,23 @@ class Countries extends React.Component {
         // add the feature to state and turn it green
         this.props.addCorrectItem(featureName);
         this.setFeatureCorrectStyle(layer, featureName);
+        // Auto-close popup immediately for correct guesses
+        layer.closePopup();
       } else if (this.isCorrectLaterGuess(e, featureName)) {
         // they got it wrong at first, but got it right later
         // add the feature to "later guess" state and turn it orange
         this.props.addLaterCorrectItem(featureName);
         this.setFeatureLaterCorrectStyle(layer, featureName);
+        // Auto-close popup immediately for correct guesses
+        layer.closePopup();
       } else {
         // they got it wrong
         // add the feature to state and turn it red
         this.props.addIncorrectItem(featureName);
         this.setFeatureIncorrectStyle(layer, featureName);
+        // Keep popup open for incorrect guesses
+        layer.closePopup();
       }
-
-      layer.closePopup();
     });
 
     return input;
@@ -279,9 +357,9 @@ class Countries extends React.Component {
       }
       this.props.addRevealedItem(featureName);
 
-      // set the input value to the feature name
+      // set the input value to the feature name and close popup
       input.value = featureName;
-      input.focus();
+      layer.closePopup();
     });
 
     return revealButton;
@@ -306,6 +384,50 @@ class Countries extends React.Component {
     });
 
     return hintButton;
+  }
+
+  showHelpModal = () => {
+    // Create help modal
+    const modal = document.createElement('div');
+    modal.classList.add('help-modal');
+    if (!this.props.darkMode) {
+      modal.classList.add('light');
+    }
+    
+    modal.innerHTML = `
+      <div class="help-modal-content ${!this.props.darkMode ? 'light' : ''}">
+        <h3>Keyboard Shortcuts</h3>
+        <div class="shortcut-item">
+          <strong>Enter</strong> - Submit your guess
+        </div>
+        <div class="shortcut-item">
+          <strong>Shift + S</strong> - Skip/reveal answer
+        </div>
+        <div class="shortcut-item">
+          <strong>Shift + H</strong> - Get first letter hint
+        </div>
+        <button class="close-help" ${!this.props.darkMode ? 'style="background: white; color: black;"' : ''}>Close</button>
+      </div>
+    `;
+    
+    // Add click handler to close
+    modal.querySelector('.close-help').addEventListener('click', () => {
+      document.body.removeChild(modal);
+    });
+    
+    // Close on background click
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        document.body.removeChild(modal);
+      }
+    });
+    
+    document.body.appendChild(modal);
+  };
+
+  componentWillUnmount() {
+    // Clean up any remaining event listeners
+    document.removeEventListener('keydown', this.handleGlobalKeyDown);
   }
 
   render() {
